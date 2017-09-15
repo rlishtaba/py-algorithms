@@ -5,6 +5,8 @@ import pytest
 
 from py_algorithms.dynamic_connectivity import dynamic_connectivity_brute_force
 from py_algorithms.dynamic_connectivity import dynamic_connectivity_quick_union
+from py_algorithms.dynamic_connectivity import dynamic_connectivity_weighted_quick_union
+from py_algorithms.dynamic_connectivity import dynamic_connectivity_weighted_quick_union_pc
 from py_algorithms.dynamic_connectivity import DynamicConnectivity
 
 
@@ -41,3 +43,9 @@ class TestDynamicConnectivity:
 
     def testQuickUnion(self):
         helper_impl(dynamic_connectivity_quick_union)
+
+    def testWeightedQuickUnion(self):
+        helper_impl(dynamic_connectivity_weighted_quick_union)
+
+    def testWeightedQuickUnionPC(self):
+        helper_impl(dynamic_connectivity_weighted_quick_union_pc)

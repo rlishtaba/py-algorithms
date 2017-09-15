@@ -1,4 +1,5 @@
 import abc
+import copy
 from typing import List
 
 
@@ -8,6 +9,14 @@ def dynamic_connectivity_brute_force(components: List[int]) -> 'DynamicConnectiv
 
 def dynamic_connectivity_quick_union(components: List[int]) -> 'DynamicConnectivity':
     return _QuickUnion(components)
+
+
+def dynamic_connectivity_weighted_quick_union(components: List[int]) -> 'DynamicConnectivity':
+    return _WeighedQuickUnion(components)
+
+
+def dynamic_connectivity_weighted_quick_union_pc(components: List[int]) -> 'DynamicConnectivity':
+    return _WeighedQuickUnionPC(components)
 
 
 class DynamicConnectivity(metaclass=abc.ABCMeta):
@@ -55,3 +64,44 @@ class _QuickUnion(DynamicConnectivity):
         while x != self._components[x]:
             x = self._components[x]
         return x
+
+
+class _WeighedQuickUnion(_QuickUnion):
+    """
+        N = len(components)
+        Runtime N * Log N
+    """
+
+    def __init__(self, components: List[int]):
+        super().__init__(components)
+        self._tree_size = copy.deepcopy(components)
+
+    def connect(self, a: int, b: int) -> None:
+        a_ptr = self._root(a)
+        b_ptr = self._root(b)
+
+        # test if already connected
+        if a_ptr == b_ptr:
+            return
+
+        # attach smaller tree to bigger one
+        if self._tree_size[a_ptr] < self._tree_size[b_ptr]:
+            self._components[a_ptr] = b_ptr
+            self._tree_size[b_ptr] += self._tree_size[a_ptr]
+        else:
+            self._components[b_ptr] = a_ptr
+            self._tree_size[a_ptr] += self._tree_size[b_ptr]
+
+
+class _WeighedQuickUnionPC(_WeighedQuickUnion):
+    def _root(self, x: int) -> int:
+        root = x
+        while root != self._components[root]:
+            root = self._components[root]
+
+        while x != root:
+            new_root = self._components[x]
+            self._components[x] = root
+            x = new_root
+
+        return root
