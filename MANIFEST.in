@@ -1,0 +1,2 @@
+include versioneer.py
+include py_algorithms/_version.py
