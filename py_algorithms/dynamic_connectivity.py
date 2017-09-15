@@ -3,20 +3,20 @@ import copy
 from typing import List
 
 
-def dynamic_connectivity_brute_force(components: List[int]) -> 'DynamicConnectivity':
-    return _BruteForce(components)
+def dynamic_connectivity_brute_force(xs: List[int]) -> 'DynamicConnectivity':
+    return _BruteForce(xs)
 
 
-def dynamic_connectivity_quick_union(components: List[int]) -> 'DynamicConnectivity':
-    return _QuickUnion(components)
+def dynamic_connectivity_quick_union(xs: List[int]) -> 'DynamicConnectivity':
+    return _QuickUnion(xs)
 
 
-def dynamic_connectivity_weighted_quick_union(components: List[int]) -> 'DynamicConnectivity':
-    return _WeighedQuickUnion(components)
+def dynamic_connectivity_weighted_quick_union(xs: List[int]) -> 'DynamicConnectivity':
+    return _WeighedQuickUnion(xs)
 
 
-def dynamic_connectivity_weighted_quick_union_pc(components: List[int]) -> 'DynamicConnectivity':
-    return _WeighedQuickUnionPC(components)
+def dynamic_connectivity_weighted_quick_union_pc(xs: List[int]) -> 'DynamicConnectivity':
+    return _WeightedQuickUnionPC(xs)
 
 
 class DynamicConnectivity(metaclass=abc.ABCMeta):
@@ -93,7 +93,7 @@ class _WeighedQuickUnion(_QuickUnion):
             self._tree_size[a_ptr] += self._tree_size[b_ptr]
 
 
-class _WeighedQuickUnionPC(_WeighedQuickUnion):
+class _WeightedQuickUnionPC(_WeighedQuickUnion):
     def _root(self, x: int) -> int:
         root = x
         while root != self._components[root]:
