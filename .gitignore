@@ -108,3 +108,4 @@ ENV/
 /*.iml
 
 /junit-report.xml
+/release.sh
