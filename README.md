@@ -18,6 +18,27 @@ Or install it using `pip` package manager:
 ## Usage
 
 
+## What's inside?
+
+    ^ Data Structures
+      - Deque
+      - Stack
+      - Queue
+
+    ^ Search
+      - Binary Search
+
+    ^ Sorting
+      - Bubble Sort
+
+    ^ Agorithms
+      - Quick Union
+      - Union Find
+      - Weighted Union Find
+      - Weighted Union Find with Path Compression
+
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/rlishtaba/py-algorithms. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
