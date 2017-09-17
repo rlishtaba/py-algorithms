@@ -22,6 +22,7 @@ setup(
     description="Algorithms and Data Structures",
     long_description="Algorithms and Data Structures implemented using Python",
     license="GPL v3",
+    url='https://github.com/rlishtaba/py-algorithms',
     scripts=[],
     classifiers=[
         "Programming Language :: Python",
