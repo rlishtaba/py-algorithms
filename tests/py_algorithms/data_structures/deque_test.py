@@ -27,8 +27,8 @@ class TestDeque:
         assert deque.front == 1
         assert deque.back == 1
         deque.push_front(2)
-        assert deque.front == 1
-        assert deque.back == 2
+        assert deque.front == 2
+        assert deque.back == 1
 
     def testPushBack(self):
         deque = new_deque()
@@ -36,11 +36,11 @@ class TestDeque:
         assert deque.front == 1
         assert deque.back == 1
         deque.push_back(2)
-        assert deque.front == 2
-        assert deque.back == 1
+        assert deque.front == 1
+        assert deque.back == 2
         deque.push_back(3)
-        assert deque.front == 3
-        assert deque.back == 1
+        assert deque.front == 1
+        assert deque.back == 3
 
     def testPopFrontWithOneItem(self):
         deque = new_deque()
