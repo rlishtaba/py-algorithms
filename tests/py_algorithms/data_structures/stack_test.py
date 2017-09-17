@@ -12,27 +12,27 @@ def collection() -> List[int]:
 
 
 class TestStack:
-    def testProperties(self):
+    def test_properties(self):
         items = collection()
         ds = new_stack(copy.deepcopy(items))
         assert ds.is_empty() is False
         assert ds.size == len(items)
 
-    def testPop(self):
+    def test_pop(self):
         items = collection()
         ds = new_stack(copy.deepcopy(items))
         for _ in range(0, len(items) - 1):
             ds.pop()
         assert ds.next == items[0]
 
-    def testPopPush(self):
+    def test_pop_push(self):
         ds = new_stack()
         ds.push(10)
         ds.push(9)
         assert ds.next == 9
         assert ds.pop() == 9
 
-    def testCornerCases(self):
+    def test_corner_cases(self):
         ds = new_stack()
         assert ds.pop() is None
         ds.push(1)

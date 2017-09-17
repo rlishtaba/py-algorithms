@@ -12,7 +12,7 @@ def collection() -> List[int]:
 
 
 class TestDeque:
-    def testProperties(self):
+    def test_properties(self):
         items = collection()
         deque = new_deque(copy.deepcopy(items))
         assert deque.is_empty() is False
@@ -21,7 +21,7 @@ class TestDeque:
         assert deque.is_empty() is True
         assert deque.size == 0
 
-    def testPushFront(self):
+    def test_push_front(self):
         deque = new_deque()
         deque.push_front(1)
         assert deque.front == 1
@@ -30,7 +30,7 @@ class TestDeque:
         assert deque.front == 2
         assert deque.back == 1
 
-    def testPushBack(self):
+    def test_push_back(self):
         deque = new_deque()
         deque.push_back(1)
         assert deque.front == 1
@@ -42,7 +42,7 @@ class TestDeque:
         assert deque.front == 1
         assert deque.back == 3
 
-    def testPopFrontWithOneItem(self):
+    def test_pop_front_with_one_item(self):
         deque = new_deque()
         deque.push_front(1)
         assert deque.front == 1
@@ -53,7 +53,7 @@ class TestDeque:
         assert deque.is_empty() is True
         assert deque.size == 0
 
-    def testPopFront(self):
+    def test_pop_front(self):
         deque = new_deque()
         items = [1, 3, 2, 7]
         expected = []
@@ -66,7 +66,7 @@ class TestDeque:
 
         assert items == expected
 
-    def testPopBack(self):
+    def test_pop_back(self):
         deque = new_deque()
         items = [1, 3, 2, 7]
         expected = []

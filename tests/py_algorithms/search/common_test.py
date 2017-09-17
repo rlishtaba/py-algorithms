@@ -19,5 +19,5 @@ def helper(algo: Search) -> None:
 
 
 class TestCommonSearchAlgorithms:
-    def testBinarySearch(self):
+    def test_binary_search(self):
         helper(binary_search())

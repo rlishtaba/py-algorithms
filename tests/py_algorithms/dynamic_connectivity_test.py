@@ -38,14 +38,14 @@ def helper_impl(f: Callable[[List[int]], DynamicConnectivity]) -> None:
 
 
 class TestDynamicConnectivity:
-    def testBruteForce(self):
+    def test_brute_force(self):
         helper_impl(dynamic_connectivity_brute_force)
 
-    def testQuickUnion(self):
+    def test_quick_union(self):
         helper_impl(dynamic_connectivity_quick_union)
 
-    def testWeightedQuickUnion(self):
+    def test_weighted_quick_union(self):
         helper_impl(dynamic_connectivity_weighted_quick_union)
 
-    def testWeightedQuickUnionPC(self):
+    def test_weighted_quick_union_pc(self):
         helper_impl(dynamic_connectivity_weighted_quick_union_pc)
