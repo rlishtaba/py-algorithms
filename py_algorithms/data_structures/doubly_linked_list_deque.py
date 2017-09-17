@@ -54,13 +54,13 @@ class DoublyLinkedListDeque(Deque):
         return self._size
 
     @property
-    def front(self) -> Union[None, Any]:
+    def back(self) -> Union[None, Any]:
         if self._back is not None:
             return self._back.val
         return None
 
     @property
-    def back(self) -> Union[None, Any]:
+    def front(self) -> Union[None, Any]:
         if self._front is not None:
             return self._front.val
         return None
