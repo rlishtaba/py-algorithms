@@ -21,6 +21,9 @@ Or install it using `pip` package manager:
       - Deque
       - Stack (LIFO)
       - Queue (FIFO)
+      - Fibonacci Heap (https://en.wikipedia.org/wiki/Fibonacci_heap)
+        - Min Heap
+        - Max Heap
       - Priority Queue
 
     ^ Search
