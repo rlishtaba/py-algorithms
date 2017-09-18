@@ -37,7 +37,11 @@ Or install it using `pip` package manager:
 
 ## Usage
 
-### Sorting
+Check out unit test in order to take usage examples.
+
+### Sorting Algorithms
+
+#### Bubble Sort
 
 Sort algorithms factory methods implementation will follow
 functional interface. Old school concrete type disclosure available too as well
@@ -50,18 +54,10 @@ functional interface. Old school concrete type disclosure available too as well
 
     # => [-88, -1, 0, 15, 20, 70]
 
-Same as
 
-    from py_algorithms.sort import BubbleSort, Sort
+### Search Algorithms
 
-    bubble_sort = BubbleSort() # type: Sort
-
-    bubble_sort.sort([20,15,0,-1,70,-88])
-
-    # => [-88, -1, 0, 15, 20, 70]
-
-
-### Search
+#### Binary Search
 
     from py_algorithms.search import binary_search, Search
 
@@ -115,6 +111,9 @@ constant time.
 
 ### Algorithms
 
+#### Weighted Union Find With Path Compression
+
+...
 
 ## Contributing
 
