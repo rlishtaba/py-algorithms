@@ -119,13 +119,22 @@ Generic Heap using Fibonacci algorithm underneath.
 
 ##### Generic MAX Heap example (using simple comparison functor)
 
-    ```python
-    >>> max_heap = new_heap(lambda x, y: (x > y) - (x < y) == 1)
-    >>> max_heap.push('Kelly', 1)
-    >>> max_heap.push('Ryan', 7)
-    >>> max_heap.next_key #=> 'Ryan'
-    >>> max_heap.pop()    #=> 7
-    ```
+Make a new heap with `Max` property
+
+    from py_algorithms.data_structures import new_heap, Heap
+
+    heap = new_heap(lambda x, y: (x > y) - (x < y) == 1) # type: Heap
+
+Push distinct key value pairs to the heap
+
+    heap.push('Kelly', 1)
+    heap.push('Susan', 8)
+    heap.push('Ryan', 7)
+
+Heap should manage to keep highest key & value on the top
+
+    heap.next_key #=> 'Susan'
+    heap.pop()    #=> 8
 
 ### Algorithms
 
