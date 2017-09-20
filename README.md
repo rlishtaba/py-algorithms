@@ -1,7 +1,6 @@
 # Python Algorithms
 
-[![Build Status](https://travis-ci.org/rlishtaba/py-algorithms-playground.svg?branch=master)](https://travis-ci.org/rlishtaba/py-algorithms)
-
+[![Build Status](https://travis-ci.org/rlishtaba/py-algorithms.svg?branch=master)](https://travis-ci.org/rlishtaba/py-algorithms)
 
 ## Installation
 
@@ -11,9 +10,11 @@ Add this line to your application as managed dependency:
 py-algorithms>=0,<1
 ```
 
-Or install it using `pip` package manager:
+Or install it globally/locally using `pip` package manager:
 
-    $ pip install py-algorithms
+```bash
+$ pip install py-algorithms
+```
 
 ## What's inside?
 
@@ -44,77 +45,159 @@ Check out unit test in order to take usage examples.
 
 ### Sorting Algorithms
 
-#### Bubble Sort
-
 Sort algorithms factory methods implementation will follow
 functional interface. Old school concrete type disclosure available too as well
 
-    from py_algorithms.sort import new_bubble_sort
+#### *Bubble Sort
 
-    bubble_sort = new_bubble_sort() # returns function of a Sort interface to apply
+    Worst case: O(n^2)
+    Best case: O(n) (if already sorted)
+    Average: O(n^2)
+    Worst case space: O(1)
 
-    bubble_sort([20,15,0,-1,70,-88])
+```python
+from py_algorithms.sort import new_bubble_sort
 
-    # => [-88, -1, 0, 15, 20, 70]
+sort = new_bubble_sort() # type: Callable[[List[T]], List[T]]
+sort([20,15,0,-1,70,-88])
 
+#=> [-88, -1, 0, 15, 20, 70]
+```
+
+---
 
 ### Search Algorithms
 
-#### Binary Search
+#### *Binary Search
 
-    from py_algorithms.search import binary_search, Search
+```python
+from py_algorithms.search import binary_search, Search
 
-    algorithm = binary_search() # type: Sesrch
+algorithm = binary_search() # type: Search
+algorithm.search([0, 6, 7, 8, 9, 4, 5, 12], 1)
 
-    algorithm.search([0, 6, 7, 8, 9, 4, 5, 12], 1)
+#=> 12
+```
 
-    # => 12
-
+---
 
 ### Data Structures
 
-#### Deque
+#### *Deque
 
 Deque implementation using doubly-linked list underneath. Operations taking
 constant time.
 
-    from py_algorithms.data_structures import new_deque
+```python
+from py_algorithms.data_structures import new_deque, Deque
 
-    ds = new_deque()
-    ds.push_back(1)  #=> 1
-    ds.push_front(2) #=> 2
-    ds.front         #=> 2
-    ds.back          #=> 1
-    ds.pop_front()   #=> 2
-    ds.size          #=> 1
+ds = new_deque() # type: Deque
+ds.push_back(1)  #=> 1
+ds.push_front(2) #=> 2
+ds.front         #=> 2
+ds.back          #=> 1
+ds.pop_front()   #=> 2
+ds.size          #=> 1
+```
 
+#### *FIFO queue
 
-#### FIFO queue
+```python
+from py_algorithms.data_structures import new_queue, Queue
 
-    from py_algorithms.data_structures import new_queue
+ds = new_queue() # type: Queue
+ds.push(1)
+ds.push(2)
+ds.pop() #=> 1
+ds.pop() #=> 2
+ds.size  #=> 0
+```
 
-    ds = new_queue()
-    ds.push(1)
-    ds.push(2)
-    ds.pop() #=> 1
-    ds.pop() #=> 2
-    ds.size  #=> 0
+#### *LIFO queue. Stack.
 
+```python
+from py_algorithms.data_structures import new_stack, Stack
 
-#### LIFO queue. Stack.
+ds = new_stack() # type: Stack
+ds.push(1)
+ds.push(2)
+ds.pop() #=> 2
+ds.pop() #=> 1
+ds.size  #=> 0
+```
 
-    from py_algorithms.data_structures import new_stack
+#### Heap
 
-    ds = new_stack()
-    ds.push(1)
-    ds.push(2)
-    ds.pop() #=> 2
-    ds.pop() #=> 1
-    ds.size  #=> 0
+Generic Heap using Fibonacci algorithm underneath.
+
+##### *Generic Heap (https://www.cs.princeton.edu/~wayne/teaching/fibonacci-heap.pdf)
+
+Make a new heap with `Max` property by supplying functor `(a: any, b: any) => c: int`
+
+```python
+from py_algorithms.data_structures import new_heap, Heap
+
+heap = new_heap(lambda x, y: (x > y) - (x < y) == 1) # type: Heap
+```
+
+Push distinct key value pairs to the heap
+
+```python
+heap.push('Kelly', 1)
+heap.push('Susan', 8)
+heap.push('Ryan', 7)
+```
+
+Heap should manage to keep highest key & value on the top
+
+```python
+heap.next_key #=> 'Susan'
+heap.pop()    #=> 8
+```
+
+##### *MAX Heap (https://en.wikipedia.org/wiki/Min-max_heap)
+
+```python
+from py_algorithms.data_structures import new_max_heap, Heap
+
+heap = new_max_heap() # type: Heap
+
+heap.push('Kelly', 1)
+heap.push('Susan', 8)
+heap.push('Ryan', 7)
+```
+
+Heap should manage to keep highest key & value on the top
+
+```python
+heap.next_key #=> 'Susan'
+heap.max      #=> 8
+heap.pop()    #=> 8
+```
+
+##### *MIN Heap (https://en.wikipedia.org/wiki/Min-max_heap)
+
+```python
+from py_algorithms.data_structures import new_min_heap, Heap
+
+heap = new_min_heap() # type: Heap
+
+heap.push('One', 1)
+heap.push('Eight', -8)
+heap.push('Seven', 7)
+```
+
+Heap should manage to keep lowest key & value on the top
+
+```python
+heap.next_key #=> 'Eight'
+heap.min      #=> -8
+heap.pop()    #=> -8
+```
 
 ### Algorithms
 
-#### Weighted Union Find With Path Compression
+#### *Weighted Union Find With Path Compression
 
 ...
 

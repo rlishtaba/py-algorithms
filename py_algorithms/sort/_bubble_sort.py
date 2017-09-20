@@ -1,6 +1,6 @@
 from typing import List
 
-from ..utils import compare_ints
+from ..utils import three_way_cmp
 from .sort import Sort
 
 
@@ -24,7 +24,7 @@ class BubbleSort(Sort):
             for i in range(0, len(xs) - 1):
                 # compare current item with next one,
                 # if current bigger than next one - swap it, mark state flag
-                if 1 == compare_ints(xs[i], xs[i + 1]):
+                if 1 == three_way_cmp(xs[i], xs[i + 1]):
                     xs[i], xs[i + 1] = xs[i + 1], xs[i]
                     swapped = True
             # all items are in order now
