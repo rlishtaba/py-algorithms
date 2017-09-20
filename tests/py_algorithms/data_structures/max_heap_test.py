@@ -1,23 +1,14 @@
-import pytest
-
-from py_algorithms.data_structures import Heap
-from py_algorithms.data_structures import new_heap
-
-
-@pytest.fixture
-def int_max_heap() -> Heap:
-    # max property, for integer based keys
-    return new_heap(lambda x, y: (x > y) - (x < y) == 1)
+from py_algorithms.data_structures import new_max_heap
 
 
 class TestHeap:
     def test_properties(self):
-        ds = int_max_heap()
+        ds = new_max_heap()
         assert ds.size == 0
         assert ds.is_empty is True
 
     def test_push(self):
-        ds = int_max_heap()
+        ds = new_max_heap()
         ds.push(1, 11)
         ds.push(2, 12)
         ds.push(3, 13)
@@ -27,7 +18,7 @@ class TestHeap:
         assert ds.contains_key('the key') is False
 
     def test_pop(self):
-        ds = int_max_heap()
+        ds = new_max_heap()
         ds.push(1, 11)
         ds.push(2, 12)
         ds.push(3, 13)

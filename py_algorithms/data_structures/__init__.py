@@ -6,6 +6,8 @@ from typing import TypeVar
 from .deque import Deque
 from .doubly_linked_list_deque import DoublyLinkedListDeque
 from .heap import Heap
+from .max_heap import MaxHeap
+from .min_heap import MinHeap
 from .queue import Queue
 from .stack import Stack
 
@@ -47,3 +49,25 @@ def new_heap(comparator_f2: Callable[[Any, Any], bool], xs: List[Any] = ()) -> H
 
     """
     return Heap(comparator_f2, xs)
+
+
+def new_max_heap(xs: List[Any] = ()) -> Heap:
+    """
+        MAX Heap constructor. https://en.wikipedia.org/wiki/Min-max_heap
+        @see #new_heap
+
+    :param xs: optional collection of initial values
+    :return: an interface to Heap
+    """
+    return MaxHeap(xs)
+
+
+def new_min_heap(xs: List[Any] = ()) -> Heap:
+    """
+        MIN Heap constructor. https://en.wikipedia.org/wiki/Min-max_heap
+        @see #new_heap
+
+    :param xs: optional collection of initial values
+    :return: an interface to Heap
+    """
+    return MinHeap(xs)

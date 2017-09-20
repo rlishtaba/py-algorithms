@@ -146,6 +146,46 @@ Heap should manage to keep highest key & value on the top
 heap.next_key #=> 'Susan'
 heap.pop()    #=> 8
 ```
+
+##### *MAX Heap (https://en.wikipedia.org/wiki/Min-max_heap)
+
+```python
+from py_algorithms.data_structures import new_max_heap, Heap
+
+heap = new_max_heap() # type: Heap
+
+heap.push('Kelly', 1)
+heap.push('Susan', 8)
+heap.push('Ryan', 7)
+```
+
+Heap should manage to keep highest key & value on the top
+
+```python
+heap.next_key #=> 'Susan'
+heap.max      #=> 8
+heap.pop()    #=> 8
+```
+
+##### *MIN Heap (https://en.wikipedia.org/wiki/Min-max_heap)
+
+```python
+from py_algorithms.data_structures import new_min_heap, Heap
+
+heap = new_min_heap() # type: Heap
+
+heap.push('One', 1)
+heap.push('Eight', -8)
+heap.push('Seven', 7)
+```
+
+Heap should manage to keep lowest key & value on the top
+
+```python
+heap.next_key #=> 'Eight'
+heap.min      #=> -8
+heap.pop()    #=> -8
+
 ### Algorithms
 
 #### Weighted Union Find With Path Compression
