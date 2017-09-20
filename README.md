@@ -1,7 +1,6 @@
 # Python Algorithms
 
-[![Build Status](https://travis-ci.org/rlishtaba/py-algorithms-playground.svg?branch=master)](https://travis-ci.org/rlishtaba/py-algorithms)
-
+[![Build Status](https://travis-ci.org/rlishtaba/py-algorithms.svg?branch=master)](https://travis-ci.org/rlishtaba/py-algorithms)
 
 ## Installation
 
@@ -46,10 +45,15 @@ Check out unit test in order to take usage examples.
 
 ### Sorting Algorithms
 
-#### Bubble Sort
-
 Sort algorithms factory methods implementation will follow
 functional interface. Old school concrete type disclosure available too as well
+
+#### *Bubble Sort
+
+    Worst case: O(n^2)
+    Best case: O(n) (if already sorted)
+    Average: O(n^2)
+    Worst case space: O(1)
 
 ```python
 from py_algorithms.sort import new_bubble_sort
@@ -60,9 +64,11 @@ sort([20,15,0,-1,70,-88])
 #=> [-88, -1, 0, 15, 20, 70]
 ```
 
+---
+
 ### Search Algorithms
 
-#### Binary Search
+#### *Binary Search
 
 ```python
 from py_algorithms.search import binary_search, Search
@@ -73,9 +79,11 @@ algorithm.search([0, 6, 7, 8, 9, 4, 5, 12], 1)
 #=> 12
 ```
 
+---
+
 ### Data Structures
 
-#### Deque
+#### *Deque
 
 Deque implementation using doubly-linked list underneath. Operations taking
 constant time.
@@ -92,7 +100,7 @@ ds.pop_front()   #=> 2
 ds.size          #=> 1
 ```
 
-#### FIFO queue
+#### *FIFO queue
 
 ```python
 from py_algorithms.data_structures import new_queue, Queue
@@ -105,7 +113,7 @@ ds.pop() #=> 2
 ds.size  #=> 0
 ```
 
-#### LIFO queue. Stack.
+#### *LIFO queue. Stack.
 
 ```python
 from py_algorithms.data_structures import new_stack, Stack
@@ -122,9 +130,9 @@ ds.size  #=> 0
 
 Generic Heap using Fibonacci algorithm underneath.
 
-##### Generic MAX Heap example (using simple comparison functor)
+##### *Generic Heap (https://www.cs.princeton.edu/~wayne/teaching/fibonacci-heap.pdf)
 
-Make a new heap with `Max` property
+Make a new heap with `Max` property by supplying functor `(a: any, b: any) => c: int`
 
 ```python
 from py_algorithms.data_structures import new_heap, Heap
@@ -185,10 +193,11 @@ Heap should manage to keep lowest key & value on the top
 heap.next_key #=> 'Eight'
 heap.min      #=> -8
 heap.pop()    #=> -8
+```
 
 ### Algorithms
 
-#### Weighted Union Find With Path Compression
+#### *Weighted Union Find With Path Compression
 
 ...
 
