@@ -112,6 +112,21 @@ constant time.
     ds.pop() #=> 1
     ds.size  #=> 0
 
+
+#### Heap
+
+Generic Heap using Fibonacci algorithm underneath.
+
+##### Generic MAX Heap example (using simple comparison functor)
+
+    ```python
+    >>> max_heap = new_heap(lambda x, y: (x > y) - (x < y) == 1)
+    >>> max_heap.push('Kelly', 1)
+    >>> max_heap.push('Ryan', 7)
+    >>> max_heap.next_key #=> 'Ryan'
+    >>> max_heap.pop()    #=> 7
+    ```
+
 ### Algorithms
 
 #### Weighted Union Find With Path Compression

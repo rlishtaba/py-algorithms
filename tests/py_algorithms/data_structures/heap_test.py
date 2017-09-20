@@ -1,13 +1,12 @@
 import pytest
 
 from py_algorithms.data_structures.heap import Heap
-from py_algorithms.utils import compare_ints
 
 
 @pytest.fixture
 def int_max_heap() -> Heap:
     # max property, for integer based keys
-    return Heap(lambda a, b: compare_ints(a, b) == 1)
+    return Heap(lambda x, y: (x > y) - (x < y) == 1)
 
 
 class TestHeap:

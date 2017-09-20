@@ -1,9 +1,11 @@
 from typing import Any
+from typing import Callable
 from typing import List
 from typing import TypeVar
 
 from .deque import Deque
 from .doubly_linked_list_deque import DoublyLinkedListDeque
+from .heap import Heap
 from .queue import Queue
 from .stack import Stack
 
@@ -26,3 +28,22 @@ def new_queue(collection: List[T] = ()) -> Queue[T]:
 
 def new_stack(collection: List[T] = ()) -> Queue[T]:
     return Stack[T](collection)
+
+
+def new_heap(comparator_f2: Callable[[Any, Any], bool], xs: List[Any] = ()) -> Heap:
+    """
+    Factory method to construct generic heap
+    :param comparator_f2: a morphism to apply in order to compare heap entries
+    :param List[T] xs: a list of initial isomorphic values to populate heap
+    :return: pointer to Heap interface
+
+    Example of a generic Max heap
+
+    >>> max_heap = new_heap(lambda x, y: (x > y) - (x < y) == 1)
+    >>> max_heap.push('Kelly', 1)
+    >>> max_heap.push('Ryan', 7)
+    >>> max_heap.next_key #=> 'Ryan'
+    >>> max_heap.pop()    #=> 7
+
+    """
+    return Heap(comparator_f2, xs)
