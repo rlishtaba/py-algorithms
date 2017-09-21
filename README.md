@@ -25,7 +25,10 @@ $ pip install py-algorithms
       - Fibonacci Heap (https://en.wikipedia.org/wiki/Fibonacci_heap)
         - Min Heap
         - Max Heap
-      - Priority Queue
+      - Priority Queue (Fibonacci)
+        - Min PQ
+        - Max PQ
+      - Suffix Array
 
     ^ Search
       - Binary Search
@@ -50,6 +53,9 @@ functional interface. Old school concrete type disclosure available too as well
 
 #### *Bubble Sort
 
+Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly
+steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order.
+
     Worst case: O(n^2)
     Best case: O(n) (if already sorted)
     Average: O(n^2)
@@ -70,13 +76,17 @@ sort([20,15,0,-1,70,-88])
 
 #### *Binary Search
 
+In computer science, binary search, also known as half-interval search, logarithmic search, or binary chop,
+is a search algorithm that finds the position of a target value within a sorted array.
+
 ```python
-from py_algorithms.search import binary_search, Search
+from py_algorithms.search import new_binary_search, Search
 
-algorithm = binary_search() # type: Search
-algorithm.search([0, 6, 7, 8, 9, 4, 5, 12], 1)
+array = [0, 4, 5, 6, 7, 8, 9, 12]
+algorithm = new_binary_search() # type: Search
 
-#=> 12
+algorithm.search(array, 12) #=> 12
+algorithm.search(array, 6)  #=> 6
 ```
 
 ---
@@ -84,6 +94,10 @@ algorithm.search([0, 6, 7, 8, 9, 4, 5, 12], 1)
 ### Data Structures
 
 #### *Deque
+
+In computer science, a double-ended queue (dequeue, often abbreviated to deque)
+is an abstract data type that generalizes a queue, for which elements can be added to
+or removed from either the front (head) or back (tail)
 
 Deque implementation using doubly-linked list underneath. Operations taking
 constant time.
@@ -102,6 +116,9 @@ ds.size          #=> 1
 
 #### *FIFO queue
 
+FIFO is an acronym for first in, first out, a method for organizing and manipulating a data buffer,
+where the oldest (first) entry, or 'head' of the queue, is processed first.
+
 ```python
 from py_algorithms.data_structures import new_queue, Queue
 
@@ -114,6 +131,12 @@ ds.size  #=> 0
 ```
 
 #### *LIFO queue. Stack.
+
+In computer science, a stack is an abstract data type that serves as a collection of elements,
+with two principal operations: push, which adds an element to the collection, and pop,
+which removes the most recently added element that was not yet removed.
+The order in which elements come off a stack gives rise to its alternative name, LIFO (for last in, first out).
+Additionally, a peek operation may give access to the top without modifying the stack.
 
 ```python
 from py_algorithms.data_structures import new_stack, Stack
@@ -128,7 +151,12 @@ ds.size  #=> 0
 
 #### Heap
 
-Generic Heap using Fibonacci algorithm underneath.
+In computer science, a Fibonacci heap is a data structure for priority queue operations,
+consisting of a collection of heap-ordered trees. It has a better amortized running time
+than many other priority queue data structures including the binary heap and binomial heap.
+Michael L. Fredman and Robert E. Tarjan developed Fibonacci heaps in 1984 and published
+them in a scientific journal in 1987. They named Fibonacci heaps after the Fibonacci numbers,
+which are used in their running time analysis.
 
 ##### *Generic Heap (https://www.cs.princeton.edu/~wayne/teaching/fibonacci-heap.pdf)
 
@@ -196,6 +224,11 @@ heap.pop()    #=> -8
 ```
 
 #### Priority Queue (https://en.wikipedia.org/wiki/Priority_queue)
+In computer science, a priority queue is an abstract data type which is like a
+regular queue or stack data structure, but where additionally each element has a "priority"
+associated with it. In a priority queue, an element with high priority is served before
+an element with low priority. If two elements have the same priority,
+they are served according to their order in the queue.
 
 ##### Generic Priority Queue
 
@@ -208,6 +241,26 @@ pq = new_priority_queue(lambda x, y: (x > y) - (x < y) == 1)
 pq.push('Important', 10)
 pq.push('Not So Important', -2)
 pq.pop() #=> 'Important'
+```
+
+
+#### Suffix Array (https://en.wikipedia.org/wiki/Suffix_array)
+
+In computer science, a suffix array is a sorted array of all suffixes of a string.
+It is a data structure used, among others, in full text indices,
+data compression algorithms and within the field of bibliometrics.
+Suffix arrays were introduced by Manber & Myers (1990) as a simple,
+space efficient alternative to suffix trees. They have independently been discovered by
+Gaston Gonnet in 1987 under the name PAT array (Gonnet, Baeza-Yates & Snider 1992).
+
+```python
+from py_algorithms.data_structures import new_suffix_array
+
+ds = new_suffix_array('python')
+ds.is_sub_str('py') #=> True
+ds.is_sub_str('on') #=> True
+ds.is_sub_str('ton') #=> True
+ds.is_sub_str('blah') #=> False
 ```
 
 ---

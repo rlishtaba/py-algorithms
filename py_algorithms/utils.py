@@ -6,4 +6,4 @@ def three_way_cmp(a: Any, b: Any) -> int:
         with a total order and determines whether A < B, A = B, or A > B in a
         single operation, in accordance with the mathematical law of trichotomy.
     """
-    return (a > b) - (a < b) == 1
+    return (a > b) - (a < b)
