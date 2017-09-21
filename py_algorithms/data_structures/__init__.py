@@ -8,6 +8,7 @@ from .doubly_linked_list_deque import DoublyLinkedListDeque
 from .heap import Heap
 from .max_heap import MaxHeap
 from .min_heap import MinHeap
+from .priority_queue import PriorityQueue
 from .queue import Queue
 from .stack import Stack
 
@@ -71,3 +72,18 @@ def new_min_heap(xs: List[Any] = ()) -> Heap:
     :return: an interface to Heap
     """
     return MinHeap(xs)
+
+
+def new_priority_queue(queue_vector_f2: Callable[[Any, Any], bool]) -> PriorityQueue:
+    """
+        >>> from py_algorithms.data_structures import new_priority_queue
+        >>>
+        >>> pq = new_priority_queue(lambda x, y: (x > y) - (x < y) == 1)
+        >>> pq.push('Important', 10)
+        >>> pq.push('Not So Important', -2)
+        >>> pq.pop() #=> 'Important'
+
+    :param queue_vector_f2: a functor defining queue order
+    :return: a PriorityQueue interface
+    """
+    return PriorityQueue(queue_vector_f2)
