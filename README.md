@@ -195,6 +195,23 @@ heap.min      #=> -8
 heap.pop()    #=> -8
 ```
 
+#### Priority Queue (https://en.wikipedia.org/wiki/Priority_queue)
+
+##### Generic Priority Queue
+
+Example of a Max PQ data structure
+
+```python
+from py_algorithms.data_structures import new_priority_queue
+
+pq = new_priority_queue(lambda x, y: (x > y) - (x < y) == 1)
+pq.push('Important', 10)
+pq.push('Not So Important', -2)
+pq.pop() #=> 'Important'
+```
+
+---
+
 ### Algorithms
 
 #### *Weighted Union Find With Path Compression
