@@ -11,6 +11,7 @@ from .min_heap import MinHeap
 from .priority_queue import PriorityQueue
 from .queue import Queue
 from .stack import Stack
+from .suffix_array import SuffixArray
 
 T = TypeVar('T')
 
@@ -87,3 +88,19 @@ def new_priority_queue(queue_vector_f2: Callable[[Any, Any], bool]) -> PriorityQ
     :return: a PriorityQueue interface
     """
     return PriorityQueue(queue_vector_f2)
+
+
+def new_suffix_array(string: str) -> SuffixArray:
+    """
+    >>> from py_algorithms.data_structures import new_suffix_array
+    >>>
+    >>> ds = new_suffix_array('python')
+    >>> ds.is_sub_str('py') #=> True
+    >>> ds.is_sub_str('on') #=> True
+    >>> ds.is_sub_str('ton') #=> True
+    >>> ds.is_sub_str('blah') #=> False
+
+    :param string: a subject for detection
+    :return: SuffixArray interface
+    """
+    return SuffixArray(string)
