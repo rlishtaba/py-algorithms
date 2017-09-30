@@ -35,6 +35,7 @@ $ pip install py-algorithms
 
     ^ Sorting
       - Bubble Sort
+      - Merge Sort
 
     ^ Agorithms
       - Quick Union
@@ -68,6 +69,28 @@ sort = new_bubble_sort() # type: Callable[[List[T]], List[T]]
 sort([20,15,0,-1,70,-88])
 
 #=> [-88, -1, 0, 15, 20, 70]
+```
+
+#### *Merge Sort (https://en.wikipedia.org/wiki/Merge_sort)
+
+In computer science, merge sort is an efficient, general-purpose,
+comparison-based sorting algorithm. Most implementations produce a stable sort,
+which means that the implementation preserves the input order of equal elements in the sorted output.
+Mergesort is a divide and conquer algorithm that was invented by John von Neumann in 1945.
+
+    Worst case: О(n)
+    Best case: О(n log n)
+    Average: О(n log n)
+    Worst case space: O(n)
+
+```python
+from py_algorithms.sort import new_merge_sort
+
+xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+sorting_algorithm = new_merge_sort()
+sorting_algorithm(xs)
+
+#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
 ```
 
 ---
