@@ -15,8 +15,7 @@ class BubbleSort(Sort):
     """
 
     def sort(self, xs: List[int]) -> List[int]:
-        if not isinstance(xs, (list, tuple)):
-            raise RuntimeError('Can sort only iterable entity.')
+        self._test_iterable(xs)
 
         done = False
         while not done:
