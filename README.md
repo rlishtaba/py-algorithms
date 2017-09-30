@@ -301,4 +301,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/rlisht
 
 ## License
 
-The library is available as open source under the terms of the [LGPL v3 License](http://opensource.org/licenses/LGPLv3).
+The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
