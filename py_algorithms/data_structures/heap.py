@@ -4,6 +4,8 @@ from typing import Callable
 from typing import List
 from typing import Union
 
+from ..utils import test_iterable
+
 
 class _HeapNode:
     def __init__(self, key: Any, value: Any):
@@ -21,7 +23,10 @@ class _HeapNode:
 
 
 class Heap:
+    MAX_MIN = -sys.maxsize
+
     def __init__(self, comparator_f2: Callable[[Any, Any], bool], xs: List[Any] = ()):
+        test_iterable(xs)
         self._size = 0
         self._comparator_f2 = comparator_f2
         self._next = None
@@ -39,11 +44,11 @@ class Heap:
 
     @classmethod
     def _set_entry_by_index(cls, array, index, value):
-        if cls._get_by_index(array, index) == -sys.maxsize:
+        if cls._get_by_index(array, index) == cls.MAX_MIN:
             array[index] = value
             return array
         else:
-            array.extend([-sys.maxsize] * (index - len(array) + 1))
+            array.extend([cls.MAX_MIN] * (index - len(array) + 1))
             return cls._set_entry_by_index(array, index, value)
 
     @property
@@ -78,7 +83,7 @@ class Heap:
         return False
 
     def push(self, key: Any, value: any) -> Any:
-        if not key:
+        if key is None:
             raise RuntimeError('Could not process heap keys equal to Null.')
 
         node = _HeapNode(key, value)
@@ -174,7 +179,7 @@ class Heap:
                 # we'll try to consolidate them
                 degree = root.degree
 
-                while self._get_by_index(degrees, degree):
+                while not (self._get_by_index(degrees, degree) in [self.MAX_MIN, None]):
                     other_root_with_degree = degrees[degree]
 
                     if self._comparator_f2(root.key, other_root_with_degree.key):
@@ -185,7 +190,7 @@ class Heap:
                         smaller, larger = other_root_with_degree, root
 
                     self._link_nodes(larger, smaller)
-                    degrees[degree] = -sys.maxsize
+                    degrees[degree] = self.MAX_MIN
                     root = smaller
                     degree += 1
 

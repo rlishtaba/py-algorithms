@@ -36,8 +36,9 @@ $ pip install py-algorithms
       - Binary Search
 
     ^ Sorting
-      - Bubble Sort
+      - Heap Sort (Fibonacci heap)
       - Merge Sort
+      - Bubble Sort
       - Selection Sort
 
     ^ Agorithms
@@ -115,6 +116,29 @@ from py_algorithms.sort import new_selection_sort
 
 xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
 sorting_algorithm = new_selection_sort()
+sorting_algorithm(xs)
+
+#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
+```
+#### *Heap Sort (https://en.wikipedia.org/wiki/Heapsort)
+
+In computer science, heapsort is a comparison-based sorting algorithm.
+Heapsort can be thought of as an improved selection sort: like that algorithm,
+it divides its input into a sorted and an unsorted region, and it iteratively
+shrinks the unsorted region by extracting the largest element and moving
+that to the sorted region. The improvement consists of the use of a heap data structure
+rather than a linear-time search to find the maximum.
+
+    Worst case: О(n log n)
+    Best case: О(n)
+    Average: О(n log n)
+    Worst case space: O(1)
+
+```python
+from py_algorithms.sort import new_heap_sort
+
+xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+sorting_algorithm = new_heap_sort()
 sorting_algorithm(xs)
 
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]

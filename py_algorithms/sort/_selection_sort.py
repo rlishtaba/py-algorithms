@@ -1,5 +1,6 @@
 from typing import List
 
+from ..utils import test_iterable
 from ..utils import three_way_cmp
 from .sort import Sort
 
@@ -12,7 +13,7 @@ class SelectionSort(Sort):
     """
 
     def sort(self, xs: List[int]) -> List[int]:
-        self._test_iterable(xs)
+        test_iterable(xs)
 
         for i in range(0, len(xs)):
             min_val = i

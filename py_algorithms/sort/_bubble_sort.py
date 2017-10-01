@@ -1,5 +1,6 @@
 from typing import List
 
+from ..utils import test_iterable
 from ..utils import three_way_cmp
 from .sort import Sort
 
@@ -15,7 +16,7 @@ class BubbleSort(Sort):
     """
 
     def sort(self, xs: List[int]) -> List[int]:
-        self._test_iterable(xs)
+        test_iterable(xs)
 
         done = False
         while not done:

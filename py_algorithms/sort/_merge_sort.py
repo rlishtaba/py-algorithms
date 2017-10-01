@@ -1,5 +1,6 @@
 from typing import List
 
+from ..utils import test_iterable
 from .sort import Sort
 
 
@@ -13,7 +14,7 @@ class RecursiveMergeSort(Sort):
     """
 
     def sort(self, xs: List[int]) -> List[int]:
-        self._test_iterable(xs)
+        test_iterable(xs)
         if len(xs) <= 1:
             return xs
 
