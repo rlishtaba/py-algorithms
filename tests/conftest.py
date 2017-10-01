@@ -11,6 +11,6 @@ def xs() -> List[int]:
 
 @pytest.fixture
 def large_xs() -> List[int]:
-    raw = [0, 6, 7, 8, 9, 4, 5, 12, -112] * 50
+    raw = [0, 6, 7, 8, 9, 4, 5, 12, -112] * 500
     random.shuffle(raw)
     return raw

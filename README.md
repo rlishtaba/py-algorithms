@@ -36,6 +36,7 @@ $ pip install py-algorithms
       - Binary Search
 
     ^ Sorting
+      - Shell Sort (Shell method)
       - Heap Sort (Fibonacci heap)
       - Merge Sort
       - Bubble Sort
@@ -120,6 +121,7 @@ sorting_algorithm(xs)
 
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
 ```
+
 #### *Heap Sort (https://en.wikipedia.org/wiki/Heapsort)
 
 In computer science, heapsort is a comparison-based sorting algorithm.
@@ -143,6 +145,33 @@ sorting_algorithm(xs)
 
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
 ```
+
+#### *Shell Sort (https://en.wikipedia.org/wiki/Shellsort)
+
+Shellsort, also known as Shell sort or Shell's method, is an in-place comparison sort.
+It can be seen as either a generalization of sorting by exchange (bubble sort) or
+sorting by insertion (insertion sort). The method starts by sorting pairs of elements far apart
+from each other, then progressively reducing the gap between elements to be compared.
+Starting with far apart elements, it can move some out-of-place elements into position faster
+than a simple nearest neighbor exchange. Donald Shell published the first version of this sort in 1959
+The running time of Shellsort is heavily dependent on the gap sequence it uses. For many practical variants,
+determining their time complexity remains an open problem.
+
+    Worst case: О(n^2)
+    Best case: О(n log n)
+    Average: ~
+    Worst case space: O(n)
+
+```python
+from py_algorithms.sort import new_shell_sort
+
+xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+sorting_algorithm = new_shell_sort()
+sorting_algorithm(xs)
+
+#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
+```
+
 ---
 
 ### Search Algorithms
