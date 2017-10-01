@@ -16,7 +16,7 @@ __all__ = [
 
 def new_bubble_sort() -> Callable[[List[int]], List[int]]:
     """
-     Factory method to return sort function
+     - Bubble Sort implementation. Factory method to return sort functor.
 
          >>> from py_algorithms.sort import new_merge_sort
          >>>
@@ -31,7 +31,7 @@ def new_bubble_sort() -> Callable[[List[int]], List[int]]:
 
 def new_merge_sort() -> Callable[[List[int]], List[int]]:
     """
-    Factory method to return sort function
+    - Merge Sort, recursive implementation. Factory method to return sort functor.
 
         >>> from py_algorithms.sort import new_merge_sort
         >>>
@@ -46,7 +46,7 @@ def new_merge_sort() -> Callable[[List[int]], List[int]]:
 
 def new_selection_sort() -> Callable[[List[int]], List[int]]:
     """
-    Factory method to return sort function
+    - Selection Sort implementation. Factory method to return sort functor.
 
         >>> from py_algorithms.sort import new_selection_sort
         >>>

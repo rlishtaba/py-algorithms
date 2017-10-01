@@ -6,6 +6,8 @@ __all__ = ['Search', 'new_binary_search']
 
 def new_binary_search() -> Search:
     """
+    Generic, classic Binary Search implementation
+
         >>> from py_algorithms.search import new_binary_search
         >>>
         >>> algorithm = new_binary_search() # type: Search
