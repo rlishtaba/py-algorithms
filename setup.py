@@ -19,7 +19,7 @@ setup(
               'data structures python', 'containers', 'heaps', 'heap sort',
               'sorting algorithms', 'graphs', 'graph algorithms', 'hashing',
               'python', 'selection sort', 'merge sort', 'bubble sort', 'binary search',
-              'heap', 'fibonacci-heap', 'max-heap', 'min-heap', 'priority-queue',
+              'heap', 'fibonacci heap', 'max heap', 'min heap', 'priority queue',
               'fibonacci priority queue', 'max priority queue', 'min priority queue',
               'dynamic connectivity', 'union find', 'quick union', 'weighted quick union',
               'weighted quick union with path compression'],
