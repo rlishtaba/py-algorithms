@@ -93,6 +93,29 @@ sorting_algorithm(xs)
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
 ```
 
+#### *Selection Sort (https://en.wikipedia.org/wiki/Selection_sort)
+
+In computer science, selection sort is a sorting algorithm,
+specifically an in-place comparison sort. It has O(n^2) time complexity,
+making it inefficient on large lists, and generally performs worse than the similar insertion sort.
+Selection sort is noted for its simplicity, and it has performance
+advantages over more complicated algorithms in certain situations,
+particularly where auxiliary memory is limited.
+
+    Worst case: О(n^2)
+    Best case: О(n^2)
+    Average: О(n^2)
+    Worst case space: O(n)
+
+```python
+from py_algorithms.sort import new_selection_sort
+
+xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+sorting_algorithm = new_selection_sort()
+sorting_algorithm(xs)
+
+#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
+```
 ---
 
 ### Search Algorithms
