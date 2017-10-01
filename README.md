@@ -1,6 +1,8 @@
-# Python Algorithms
+# Algorithms and Data Structures.
 
 [![Build Status](https://travis-ci.org/rlishtaba/py-algorithms.svg?branch=master)](https://travis-ci.org/rlishtaba/py-algorithms)
+
+Library of Algorithms, Data Structures, variety of solutions to common CS problems.
 
 ## Installation
 

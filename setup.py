@@ -23,9 +23,10 @@ setup(
               'fibonacci priority queue', 'max priority queue', 'min priority queue',
               'dynamic connectivity', 'union find', 'quick union', 'weighted quick union',
               'weighted quick union with path compression'],
-    description="Algorithms and Data Structures",
-    long_description="Algorithms and Data Structures implemented using Python",
-    license="GPL v3",
+    description="Library of Algorithms, Data Structures, variety of solutions to common "
+                "CS problems",
+    long_description="Algorithms and Data Structures implemented using awesome Python.",
+    license="MIT",
     url='https://github.com/rlishtaba/py-algorithms',
     scripts=[],
     classifiers=[
