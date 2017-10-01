@@ -36,6 +36,7 @@ $ pip install py-algorithms
     ^ Sorting
       - Bubble Sort
       - Merge Sort
+      - Selection Sort
 
     ^ Agorithms
       - Quick Union
