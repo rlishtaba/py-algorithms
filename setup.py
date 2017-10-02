@@ -23,10 +23,12 @@ setup(
               'fibonacci priority queue', 'max priority queue', 'min priority queue',
               'dynamic connectivity', 'union find', 'quick union', 'weighted quick union',
               'weighted quick union with path compression', 'fibonacci heap sort', 'heapsort',
-              'heap sort', 'shell-sort', 'shell sort'],
+              'heap sort', 'shell-sort', 'shell sort', 'comb sort', 'comb-sort'],
     description="Library of Algorithms, Data Structures, variety of solutions to common "
-                "CS problems",
-    long_description="Algorithms and Data Structures implemented using awesome Python.",
+                "CS problems.",
+    long_description="Library of Algorithms, Data Structures, variety of solutions to common "
+                     "CS problems. Algorithms and Data Structures implemented using pure awesome "
+                     "Python.",
     license="MIT",
     url='https://github.com/rlishtaba/py-algorithms',
     scripts=[],

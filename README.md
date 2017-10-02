@@ -32,13 +32,14 @@ $ pip install py-algorithms
         - Max PQ
       - Suffix Array
 
-    ^ Search
+    ^ Search Algorithms
       - Binary Search
 
-    ^ Sorting
+    ^ Sort Algorithms
       - Shell Sort (Shell method)
       - Heap Sort (Fibonacci heap)
       - Merge Sort
+      - Comb Sort
       - Bubble Sort
       - Selection Sort
 
@@ -93,6 +94,29 @@ from py_algorithms.sort import new_merge_sort
 
 xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
 sorting_algorithm = new_merge_sort()
+sorting_algorithm(xs)
+
+#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
+```
+
+#### *Comb Sort (https://en.wikipedia.org/wiki/Comb_sort)
+
+Comb sort is a relatively simple sorting algorithm originally designed by
+Włodzimierz Dobosiewicz in 1980. Later it was rediscovered by Stephen Lacey and Richard Box in 1991.
+Comb sort improves on bubble sort. The basic idea is to eliminate turtles,
+or small values near the end of the list, since in a bubble sort these slow the sorting down tremendously.
+Rabbits, large values around the beginning of the list, do not pose a problem in bubble sort.
+
+    Worst case: О(n^2)
+    Best case: О(n log n)
+    Average: О(n^2)
+    Worst case space: O(1)
+
+```python
+from py_algorithms.sort import new_comb_sort
+
+xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+sorting_algorithm = new_comb_sort()
 sorting_algorithm(xs)
 
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]

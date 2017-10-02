@@ -3,17 +3,17 @@ from typing import List
 
 import pytest
 
-from py_algorithms.sort import new_shell_sort
+from py_algorithms.sort import new_comb_sort
 from tests.conftest import large_xs
 from tests.conftest import xs
 
 
 @pytest.fixture
 def new_sorting_algorithm() -> Callable[[List[int]], List[int]]:
-    return new_shell_sort()
+    return new_comb_sort()
 
 
-class TestShellSort:
+class TestCombSort:
     def test_sorting_algorithm(self):
         f = new_sorting_algorithm()
         assert sorted(xs()) == f(xs())

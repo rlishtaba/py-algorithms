@@ -1,5 +1,5 @@
 -   repo: https://github.com/pre-commit/pre-commit-hooks.git
-    sha: v0.7.0
+    sha: v0.8.0
     hooks:
     -   id: trailing-whitespace
         args: ['--no-markdown-linebreak-ext']
