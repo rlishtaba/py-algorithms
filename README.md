@@ -31,23 +31,27 @@ $ pip install py-algorithms
         - Min PQ
         - Max PQ
       - Suffix Array
+---
 
-    ^ Search Algorithms
+    ^ Search
       - Binary Search
+---
 
-    ^ Sort Algorithms
+    ^ Sort
       - Shell Sort (Shell method)
       - Heap Sort (Fibonacci heap)
       - Merge Sort
       - Comb Sort
       - Bubble Sort
       - Selection Sort
+---
 
-    ^ Agorithms
+    ^ Algorithms
       - Quick Union
       - Union Find
       - Weighted Union Find
       - Weighted Union Find with Path Compression
+---
 
 ## Usage
 
