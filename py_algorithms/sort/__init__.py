@@ -5,6 +5,7 @@ from ._bubble_sort import BubbleSort
 from ._comb_sort import CombSort
 from ._heap_sort import FibonacciHeapSort
 from ._merge_sort import RecursiveMergeSort
+from ._quick_sort import QuickSort
 from ._selection_sort import SelectionSort
 from ._shell_sort import ShellSort
 from .sort import Sort
@@ -16,6 +17,7 @@ __all__ = [
     'new_heap_sort',
     'new_shell_sort',
     'new_comb_sort',
+    'new_quick_sort',
     'Sort'
 ]
 
@@ -112,3 +114,20 @@ def new_comb_sort() -> Callable[[List[int]], List[int]]:
     """
 
     return lambda xs: CombSort().sort(xs)
+
+
+def new_quick_sort() -> Callable[[List[int]], List[int]]:
+    """
+    - Quick Sort algorithm (Improved on Bubble Sort).
+    Factory method to return sort functor.
+
+        >>> from py_algorithms.sort import new_quick_sort
+        >>>
+        >>> xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+        >>> sorting_algorithm = new_quick_sort()
+        >>> sorting_algorithm(xs) #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
+
+    :return: a function1 interface to apply
+    """
+
+    return lambda xs: QuickSort().sort(xs)

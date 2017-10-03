@@ -18,12 +18,14 @@ setup(
     keywords=['algorithm', 'algorithms', 'data structure', 'data structures',
               'data structures python', 'containers', 'heaps', 'heap sort',
               'sorting algorithms', 'graphs', 'graph algorithms', 'hashing',
-              'python', 'selection sort', 'merge sort', 'bubble sort', 'binary search',
-              'heap', 'fibonacci heap', 'max heap', 'min heap', 'priority queue',
+              'python', 'selection sort', 'selectionsort', 'merge sort', 'mergesort',
+              'bubble sort', 'bubblesort', 'quick sort', 'quick-sort', 'quicksort', 'qsort',
+              'binary search', 'heap', 'fibonacci heap', 'max heap', 'min heap', 'priority queue',
               'fibonacci priority queue', 'max priority queue', 'min priority queue',
               'dynamic connectivity', 'union find', 'quick union', 'weighted quick union',
               'weighted quick union with path compression', 'fibonacci heap sort', 'heapsort',
-              'heap sort', 'shell-sort', 'shell sort', 'comb sort', 'comb-sort'],
+              'heap sort', 'shell-sort', 'shell sort', 'shellsort', 'comb sort', 'comb-sort',
+              'combsort'],
     description="Library of Algorithms, Data Structures, variety of solutions to common "
                 "CS problems.",
     long_description="Library of Algorithms, Data Structures, variety of solutions to common "

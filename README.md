@@ -38,6 +38,7 @@ $ pip install py-algorithms
 ---
 
     ^ Sort
+      - Quick Sort
       - Shell Sort (Shell method)
       - Heap Sort (Fibonacci heap)
       - Merge Sort
@@ -195,6 +196,28 @@ from py_algorithms.sort import new_shell_sort
 
 xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
 sorting_algorithm = new_shell_sort()
+sorting_algorithm(xs)
+
+#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
+```
+
+#### *Quick Sort (https://en.wikipedia.org/wiki/Quicksort)
+
+Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm,
+serving as a systematic method for placing the elements of an array in order.
+Developed by Tony Hoare in 1959 and published in 1961, it is still a commonly used algorithm for sorting.
+When implemented well, it can be about two or three times faster than its main competitors, merge sort and heapsort.
+
+    Worst case: О(n^2)
+    Best case: О(n log n)
+    Average: О(n log n)
+    Space: O(n) naive
+
+```python
+from py_algorithms.sort import new_quick_sort
+
+xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+sorting_algorithm = new_quick_sort()
 sorting_algorithm(xs)
 
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
