@@ -65,6 +65,8 @@ functional interface. Old school concrete type disclosure available too as well
 
 #### *Bubble Sort
 
+![bubble-sort-media](https://en.wikibooks.org/wiki/A-level_Computing/AQA/Paper_1/Fundamentals_of_algorithms/Sorting_algorithms#/media/File:Sorting_bubblesort_anim.gif)
+
 Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly
 steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order.
 
@@ -83,6 +85,8 @@ sort([20,15,0,-1,70,-88])
 ```
 
 #### *Merge Sort (https://en.wikipedia.org/wiki/Merge_sort)
+
+![merge-sort-media](https://en.wikipedia.org/wiki/Merge_sort#/media/File:Merge_sort_animation2.gif)
 
 In computer science, merge sort is an efficient, general-purpose,
 comparison-based sorting algorithm. Most implementations produce a stable sort,
@@ -106,6 +110,8 @@ sorting_algorithm(xs)
 
 #### *Comb Sort (https://en.wikipedia.org/wiki/Comb_sort)
 
+![comb-sort-media](https://en.wikipedia.org/wiki/Comb_sort#/media/File:Comb_sort_demo.gif)
+
 Comb sort is a relatively simple sorting algorithm originally designed by
 Włodzimierz Dobosiewicz in 1980. Later it was rediscovered by Stephen Lacey and Richard Box in 1991.
 Comb sort improves on bubble sort. The basic idea is to eliminate turtles,
@@ -128,6 +134,8 @@ sorting_algorithm(xs)
 ```
 
 #### *Selection Sort (https://en.wikipedia.org/wiki/Selection_sort)
+
+![selection-sort-media](https://en.wikipedia.org/wiki/Selection_sort#/media/File:Selection_sort_animation.gif)
 
 In computer science, selection sort is a sorting algorithm,
 specifically an in-place comparison sort. It has O(n^2) time complexity,
@@ -153,6 +161,8 @@ sorting_algorithm(xs)
 
 #### *Heap Sort (https://en.wikipedia.org/wiki/Heapsort)
 
+![heap-sort-media](https://en.wikipedia.org/wiki/Heapsort#/media/File:Sorting_heapsort_anim.gif)
+
 In computer science, heapsort is a comparison-based sorting algorithm.
 Heapsort can be thought of as an improved selection sort: like that algorithm,
 it divides its input into a sorted and an unsorted region, and it iteratively
@@ -176,6 +186,8 @@ sorting_algorithm(xs)
 ```
 
 #### *Shell Sort (https://en.wikipedia.org/wiki/Shellsort)
+
+![shell-sort-media](https://upload.wikimedia.org/wikipedia/commons/d/d8/Sorting_shellsort_anim.gif)
 
 Shellsort, also known as Shell sort or Shell's method, is an in-place comparison sort.
 It can be seen as either a generalization of sorting by exchange (bubble sort) or
@@ -203,7 +215,7 @@ sorting_algorithm(xs)
 
 #### *Quick Sort (https://en.wikipedia.org/wiki/Quicksort)
 
-![quick_sort](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+![quick-sort-media](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
 
 Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm,
 serving as a systematic method for placing the elements of an array in order.
