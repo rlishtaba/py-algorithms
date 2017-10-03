@@ -4,6 +4,8 @@
 
 Library of Algorithms, Data Structures, variety of solutions to common CS problems.
 
+![Dijkstra’s shrotest path algorithm](https://steemitimages.com/0x0/https://i.imgur.com/dWtprX5.gif)
+
 ## Installation
 
 Add this line to your application as managed dependency:
