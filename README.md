@@ -4,6 +4,8 @@
 
 Library of Algorithms, Data Structures, variety of solutions to common CS problems.
 
+![Dijkstra’s shrotest path algorithm](https://steemitimages.com/0x0/https://i.imgur.com/dWtprX5.gif)
+
 ## Installation
 
 Add this line to your application as managed dependency:
@@ -61,107 +63,37 @@ Check out unit test in order to take usage examples.
 ### Sorting Algorithms
 
 Sort algorithms factory methods implementation will follow
-functional interface. Old school concrete type disclosure available too as well
+functional interface. Old school concrete type disclosure available too as well.
 
-#### *Bubble Sort
 
-![bubble-sort-media](https://en.wikibooks.org/wiki/A-level_Computing/AQA/Paper_1/Fundamentals_of_algorithms/Sorting_algorithms#/media/File:Sorting_bubblesort_anim.gif)
+#### *Quick Sort
 
-Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly
-steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order.
+![quick-sort-media](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
 
-    Worst case: O(n^2)
-    Best case: O(n) (if already sorted)
-    Average: O(n^2)
-    Worst case space: O(1)
+Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm,
+serving as a systematic method for placing the elements of an array in order.
+Developed by Tony Hoare in 1959 and published in 1961, it is still a commonly used algorithm for sorting.
+When implemented well, it can be about two or three times faster than its main competitors, merge sort and heapsort.
 
-```python
-from py_algorithms.sort import new_bubble_sort
-
-sort = new_bubble_sort() # type: Callable[[List[T]], List[T]]
-sort([20,15,0,-1,70,-88])
-
-#=> [-88, -1, 0, 15, 20, 70]
-```
-
-#### *Merge Sort (https://en.wikipedia.org/wiki/Merge_sort)
-
-![merge-sort-media](https://en.wikipedia.org/wiki/Merge_sort#/media/File:Merge_sort_animation2.gif)
-
-In computer science, merge sort is an efficient, general-purpose,
-comparison-based sorting algorithm. Most implementations produce a stable sort,
-which means that the implementation preserves the input order of equal elements in the sorted output.
-Mergesort is a divide and conquer algorithm that was invented by John von Neumann in 1945.
-
-    Worst case: О(n)
+    Worst case: О(n^2)
     Best case: О(n log n)
     Average: О(n log n)
-    Worst case space: O(n)
+    Space: O(n) naive
 
 ```python
-from py_algorithms.sort import new_merge_sort
+from py_algorithms.sort import new_quick_sort
 
 xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
-sorting_algorithm = new_merge_sort()
+sorting_algorithm = new_quick_sort()
 sorting_algorithm(xs)
 
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
 ```
 
-#### *Comb Sort (https://en.wikipedia.org/wiki/Comb_sort)
 
-![comb-sort-media](https://en.wikipedia.org/wiki/Comb_sort#/media/File:Comb_sort_demo.gif)
+#### *Heap Sort
 
-Comb sort is a relatively simple sorting algorithm originally designed by
-Włodzimierz Dobosiewicz in 1980. Later it was rediscovered by Stephen Lacey and Richard Box in 1991.
-Comb sort improves on bubble sort. The basic idea is to eliminate turtles,
-or small values near the end of the list, since in a bubble sort these slow the sorting down tremendously.
-Rabbits, large values around the beginning of the list, do not pose a problem in bubble sort.
-
-    Worst case: О(n^2)
-    Best case: О(n log n)
-    Average: О(n^2)
-    Worst case space: O(1)
-
-```python
-from py_algorithms.sort import new_comb_sort
-
-xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
-sorting_algorithm = new_comb_sort()
-sorting_algorithm(xs)
-
-#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
-```
-
-#### *Selection Sort (https://en.wikipedia.org/wiki/Selection_sort)
-
-![selection-sort-media](https://en.wikipedia.org/wiki/Selection_sort#/media/File:Selection_sort_animation.gif)
-
-In computer science, selection sort is a sorting algorithm,
-specifically an in-place comparison sort. It has O(n^2) time complexity,
-making it inefficient on large lists, and generally performs worse than the similar insertion sort.
-Selection sort is noted for its simplicity, and it has performance
-advantages over more complicated algorithms in certain situations,
-particularly where auxiliary memory is limited.
-
-    Worst case: О(n^2)
-    Best case: О(n^2)
-    Average: О(n^2)
-    Worst case space: O(n)
-
-```python
-from py_algorithms.sort import new_selection_sort
-
-xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
-sorting_algorithm = new_selection_sort()
-sorting_algorithm(xs)
-
-#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
-```
-
-#### *Heap Sort (https://en.wikipedia.org/wiki/Heapsort)
-
-![heap-sort-media](https://en.wikipedia.org/wiki/Heapsort#/media/File:Sorting_heapsort_anim.gif)
+![heap-sort-media](https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif)
 
 In computer science, heapsort is a comparison-based sorting algorithm.
 Heapsort can be thought of as an improved selection sort: like that algorithm,
@@ -185,7 +117,7 @@ sorting_algorithm(xs)
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
 ```
 
-#### *Shell Sort (https://en.wikipedia.org/wiki/Shellsort)
+#### *Shell Sort
 
 ![shell-sort-media](https://upload.wikimedia.org/wikipedia/commons/d/d8/Sorting_shellsort_anim.gif)
 
@@ -213,25 +145,97 @@ sorting_algorithm(xs)
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
 ```
 
-#### *Quick Sort (https://en.wikipedia.org/wiki/Quicksort)
+#### *Bubble Sort
 
-![quick-sort-media](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+![bubble-sort-media](https://upload.wikimedia.org/wikipedia/commons/5/54/Sorting_bubblesort_anim.gif)
 
-Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm,
-serving as a systematic method for placing the elements of an array in order.
-Developed by Tony Hoare in 1959 and published in 1961, it is still a commonly used algorithm for sorting.
-When implemented well, it can be about two or three times faster than its main competitors, merge sort and heapsort.
+Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly
+steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order.
+
+    Worst case: O(n^2)
+    Best case: O(n) (if already sorted)
+    Average: O(n^2)
+    Worst case space: O(1)
+
+```python
+from py_algorithms.sort import new_bubble_sort
+
+sort = new_bubble_sort() # type: Callable[[List[T]], List[T]]
+sort([20,15,0,-1,70,-88])
+
+#=> [-88, -1, 0, 15, 20, 70]
+```
+
+#### *Merge Sort
+
+![merge-sort-media](https://upload.wikimedia.org/wikipedia/commons/c/c5/Merge_sort_animation2.gif)
+
+In computer science, merge sort is an efficient, general-purpose,
+comparison-based sorting algorithm. Most implementations produce a stable sort,
+which means that the implementation preserves the input order of equal elements in the sorted output.
+Mergesort is a divide and conquer algorithm that was invented by John von Neumann in 1945.
+
+    Worst case: О(n)
+    Best case: О(n log n)
+    Average: О(n log n)
+    Worst case space: O(n)
+
+```python
+from py_algorithms.sort import new_merge_sort
+
+xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+sorting_algorithm = new_merge_sort()
+sorting_algorithm(xs)
+
+#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
+```
+
+#### *Comb Sort
+
+![comb-sort-media](https://upload.wikimedia.org/wikipedia/commons/4/46/Comb_sort_demo.gif)
+
+Comb sort is a relatively simple sorting algorithm originally designed by
+Włodzimierz Dobosiewicz in 1980. Later it was rediscovered by Stephen Lacey and Richard Box in 1991.
+Comb sort improves on bubble sort. The basic idea is to eliminate turtles,
+or small values near the end of the list, since in a bubble sort these slow the sorting down tremendously.
+Rabbits, large values around the beginning of the list, do not pose a problem in bubble sort.
 
     Worst case: О(n^2)
     Best case: О(n log n)
-    Average: О(n log n)
-    Space: O(n) naive
+    Average: О(n^2)
+    Worst case space: O(1)
 
 ```python
-from py_algorithms.sort import new_quick_sort
+from py_algorithms.sort import new_comb_sort
 
 xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
-sorting_algorithm = new_quick_sort()
+sorting_algorithm = new_comb_sort()
+sorting_algorithm(xs)
+
+#=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
+```
+
+#### *Selection Sort
+
+![selection-sort-media](https://upload.wikimedia.org/wikipedia/commons/2/25/Insertion_sort_animation.gif)
+
+In computer science, selection sort is a sorting algorithm,
+specifically an in-place comparison sort. It has O(n^2) time complexity,
+making it inefficient on large lists, and generally performs worse than the similar insertion sort.
+Selection sort is noted for its simplicity, and it has performance
+advantages over more complicated algorithms in certain situations,
+particularly where auxiliary memory is limited.
+
+    Worst case: О(n^2)
+    Best case: О(n^2)
+    Average: О(n^2)
+    Worst case space: O(n)
+
+```python
+from py_algorithms.sort import new_selection_sort
+
+xs = [0, 6, 7, 8, 9, 4, 5, 12, -1]
+sorting_algorithm = new_selection_sort()
 sorting_algorithm(xs)
 
 #=> [-1, 0, 4, 5, 6, 7, 8, 9, 12]
