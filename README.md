@@ -203,7 +203,7 @@ sorting_algorithm(xs)
 
 #### *Quick Sort (https://en.wikipedia.org/wiki/Quicksort)
 
-![quick_sort](https://en.wikipedia.org/wiki/File:Sorting_quicksort_anim.gif)
+![quick_sort](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
 
 Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm,
 serving as a systematic method for placing the elements of an array in order.
