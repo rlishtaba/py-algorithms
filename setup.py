@@ -25,7 +25,8 @@ setup(
               'dynamic connectivity', 'union find', 'quick union', 'weighted quick union',
               'weighted quick union with path compression', 'fibonacci heap sort', 'heapsort',
               'heap sort', 'shell-sort', 'shell sort', 'shellsort', 'comb sort', 'comb-sort',
-              'combsort'],
+              'combsort', 'coderbyte', 'hackerrank', 'coderbyte challenges',
+              'hackerrank challenges'],
     description="Library of Algorithms, Data Structures, variety of solutions to common "
                 "CS problems.",
     long_description="Library of Algorithms, Data Structures, variety of solutions to common "

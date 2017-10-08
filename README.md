@@ -442,6 +442,21 @@ ds.is_sub_str('blah') #=> False
 
 ...
 
+---
+
+### Challenges
+
+Solutions to specific area problems in Computer Science discipline.
+
+#### Coderbyte
+
+Solutions to various challenges published at https://coderbyte.com
+
+#### Hackerrank
+
+Solutions to various challenges published at www.hackerrank.com
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/rlishtaba/py-algorithms. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
