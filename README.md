@@ -56,6 +56,12 @@ $ pip install py-algorithms
       - Weighted Union Find with Path Compression
 ---
 
+    ^ Challenges
+      - TopCoder (www.topcoder.com)
+      - HackerRank problems & submissions (https://www.hackerrank.com)
+      - CoderByte challenges (https://coderbyte.com)
+---
+
 ## Usage
 
 Check out unit test in order to take usage examples.
@@ -441,6 +447,21 @@ ds.is_sub_str('blah') #=> False
 #### *Weighted Union Find With Path Compression
 
 ...
+
+---
+
+### Challenges
+
+Solutions to specific area problems in Computer Science discipline.
+
+#### Coderbyte
+
+Solutions to various challenges published at https://coderbyte.com
+
+#### Hackerrank
+
+Solutions to various challenges published at www.hackerrank.com
+
 
 ## Contributing
 
