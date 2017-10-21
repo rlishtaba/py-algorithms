@@ -109,3 +109,4 @@ ENV/
 
 /junit-report.xml
 /release.sh
+/debugger.py
