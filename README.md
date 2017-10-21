@@ -462,6 +462,8 @@ Solutions to various challenges published at https://coderbyte.com
 
 Solutions to various challenges published at www.hackerrank.com
 
+* Binary Search Tree LCA
+
 
 ## Contributing
 
