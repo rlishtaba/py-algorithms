@@ -464,7 +464,7 @@ Solutions to various challenges published at www.hackerrank.com
 
 * Binary Search Tree LCA
 * Shortest Path in Unweighted Graph with cycles
-
+* Weighted Path
 
 ## Contributing
 
