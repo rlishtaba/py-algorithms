@@ -62,6 +62,33 @@ $ pip install py-algorithms
       - CoderByte challenges (https://coderbyte.com)
 ---
 
+### Challenges
+
+Solutions to specific area problems in Computer Science discipline.
+
+#### Coderbyte
+
+Solutions to various challenges published at https://coderbyte.com
+
+#### Hackerrank
+
+Solutions to various challenges published at https://hackerrank.com
+
+* Binary Search Tree LCA
+* Shortest Path in Unweighted Graph with cycles
+* Weighted Path
+* PowerSet
+* Subset Sum
+* Two Sum
+* Array Addition
+
+### Algorithms
+
+#### *Weighted Union Find With Path Compression
+
+---
+
+
 ## Usage
 
 Check out unit test in order to take usage examples.
@@ -441,34 +468,6 @@ ds.is_sub_str('blah') #=> False
 ```
 
 ---
-
-### Algorithms
-
-#### *Weighted Union Find With Path Compression
-
-...
-
----
-
-### Challenges
-
-Solutions to specific area problems in Computer Science discipline.
-
-#### Coderbyte
-
-Solutions to various challenges published at https://coderbyte.com
-
-#### Hackerrank
-
-Solutions to various challenges published at www.hackerrank.com
-
-* Binary Search Tree LCA
-* Shortest Path in Unweighted Graph with cycles
-* Weighted Path
-* PowerSet
-* Subset Sum
-* Two Sum
-* Array Addition
 
 ## Contributing
 
