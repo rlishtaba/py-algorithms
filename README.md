@@ -49,6 +49,17 @@ $ pip install py-algorithms
       - Selection Sort
 ---
 
+    ^ String algorithms 
+      - Patttern Matching
+      - Boye-Moor Find 
+      - Knut-Morris-Prat Find
+---
+
+    ^ Primality Tests
+      - Miller-Rabin primality test
+      - Simple primality test
+---
+
     ^ Algorithms
       - Quick Union
       - Union Find
@@ -370,19 +381,15 @@ Make a new heap with `Max` property by supplying functor `(a: any, b: any) => c:
 from py_algorithms.data_structures import new_heap, Heap
 
 heap = new_heap(lambda x, y: (x > y) - (x < y) == 1) # type: Heap
-```
 
-Push distinct key value pairs to the heap
+# Push distinct key value pairs to the heap
 
-```python
 heap.push('Kelly', 1)
 heap.push('Susan', 8)
 heap.push('Ryan', 7)
-```
 
-Heap should manage to keep highest key & value on the top
+# Heap should manage to keep highest key & value on the top
 
-```python
 heap.next_key #=> 'Susan'
 heap.pop()    #=> 8
 ```
@@ -397,11 +404,9 @@ heap = new_max_heap() # type: Heap
 heap.push('Kelly', 1)
 heap.push('Susan', 8)
 heap.push('Ryan', 7)
-```
 
-Heap should manage to keep highest key & value on the top
+# Heap should manage to keep highest key & value on the top
 
-```python
 heap.next_key #=> 'Susan'
 heap.max      #=> 8
 heap.pop()    #=> 8
@@ -417,11 +422,9 @@ heap = new_min_heap() # type: Heap
 heap.push('One', 1)
 heap.push('Eight', -8)
 heap.push('Seven', 7)
-```
 
-Heap should manage to keep lowest key & value on the top
+# Heap should manage to keep lowest key & value on the top
 
-```python
 heap.next_key #=> 'Eight'
 heap.min      #=> -8
 heap.pop()    #=> -8
@@ -468,6 +471,83 @@ ds.is_sub_str('blah') #=> False
 ```
 
 ---
+
+---
+
+### String Algorithms
+
+
+
+![boyer-moore-media](https://www.researchgate.net/profile/Monther_Aldwairi/publication/237067573/figure/fig1/AS:299315785420823@1448373852591/Figure-1-The-Boyer-Moore-algorithm-illustrated-while-checking-a-signature-in-Snort.png)
+
+#### Boyer–Moore string search algorithm
+
+In computer science, the Boyer–Moore string search algorithm is an efficient string searching algorithm that 
+is the standard benchmark for practical string search literature. It was developed by Robert S. Boyer and J Strother Moore in 1977.
+The algorithm preprocesses the string being searched for (the pattern), but not the string being searched in (the text). 
+It is thus well-suited for applications in which the pattern is much shorter than the text or where it persists across multiple searches. 
+The Boyer-Moore algorithm uses information gathered during the preprocess step to skip sections of the text, 
+resulting in a lower constant factor than many other string search algorithms.
+
+```python
+
+from py_algorithms.strings import new_boyer_moore_find
+
+algorithm = new_boyer_moore_find()
+
+substr = 'abcd'
+algorithm('foo' + substr + 'bar', substr) # => 3
+
+```
+
+---
+
+### Primality Test Algorithms
+
+[primes](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Gaussian_integer_lattice.svg/389px-Gaussian_integer_lattice.svg.png)
+
+A primality test is an algorithm for determining whether an input number is prime.
+Among other fields of mathematics, it is used for cryptography. 
+Unlike integer factorization, primality tests do not generally give prime factors, only stating whether the input number 
+is prime or not. Factorization is thought to be a computationally difficult problem, whereas primality 
+testing is comparatively easy (its running time is polynomial in the size of the input). 
+Some primality tests prove that a number is prime, while others like Miller–Rabin prove that a number is composite. 
+Therefore, the latter might be called compositeness tests instead of primality tests.
+
+
+#### Miller-Rabin Primality Test
+ 
+The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, 
+similar to the Fermat primality test and the Solovay–Strassen primality test. Its original version, due to Gary L. Miller, is deterministic, 
+but the correctness relies on the unproven Extended Riemann hypothesis; Michael O. Rabin modified it to obtain an unconditional probabilistic algorithm.
+
+```python
+from py_algorithms.primality_tests import new_miller_rabin_primality_test
+
+algorithm = new_miller_rabin_primality_test()
+
+algorithm(199) #=> True, 199 is a prime number
+algorithm(4) #=> False, 4 % 2 == 0, therefore, 4 is not a prime number. 
+
+```
+
+#### Simple Primality Test
+
+The test itself is simple and straightforward, but would work very slow on quite big primes.
+
+
+```python
+from py_algorithms.primality_tests import new_simple_primality_test
+
+algorithm = new_simple_primality_test()
+
+algorithm(32416190071) #=> True, 32416190071 is a prime number
+algorithm(4) #=> False, 4 % 2 == 0, therefore, 4 is not a prime number. 
+
+```
+
+---
+
 
 ## Contributing
 
