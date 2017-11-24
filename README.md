@@ -51,8 +51,8 @@ $ pip install py-algorithms
 
     ^ String algorithms 
       - Patttern Matching
-      - Boye-Moor Find 
-      - Knut-Morris-Prat Find
+      - Boyer–Moore string search 
+      - Knut-Morris-Prat string search 
 ---
 
     ^ Primality Tests
@@ -504,7 +504,7 @@ algorithm('foo' + substr + 'bar', substr) # => 3
 
 ### Primality Test Algorithms
 
-[primes](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Gaussian_integer_lattice.svg/389px-Gaussian_integer_lattice.svg.png)
+![primes](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Gaussian_integer_lattice.svg/389px-Gaussian_integer_lattice.svg.png)
 
 A primality test is an algorithm for determining whether an input number is prime.
 Among other fields of mathematics, it is used for cryptography. 
