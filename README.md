@@ -518,7 +518,7 @@ dag.insert_edge(b, d, None)
 dag.insert_edge(c, d, None)
 dag.insert_edge(d, e, None)
 
-topological_sort_f1(dag) # [#<Vertex(C)>, #<Vertex(B)>, #<Vertex(D)>, #<Vertex(A)>, #<Vertex(E)>]
+topological_sort_f1(dag) #=> [#<Vertex(C)>, #<Vertex(B)>, #<Vertex(D)>, #<Vertex(A)>, #<Vertex(E)>]
 
 ```
     
