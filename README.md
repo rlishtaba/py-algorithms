@@ -10,7 +10,7 @@ Library of Algorithms, Data Structures, variety of solutions to common CS proble
 
 Add this line to your application as managed dependency:
 
-```python
+```bash
 py-algorithms>=0,<1
 ```
 
@@ -22,7 +22,7 @@ $ pip install py-algorithms
 
 ## What's inside?
 
-    ^ Data Structures
+### Data Structures
       - Deque
       - Stack (LIFO)
       - Queue (FIFO)
@@ -36,12 +36,12 @@ $ pip install py-algorithms
       
 ---
 
-    ^ Search
+### Search
       - Binary Search
       
 ---
 
-    ^ Sort
+### Sort
       - Quick Sort
       - Shell Sort (Shell method)
       - Heap Sort (Fibonacci heap)
@@ -52,14 +52,7 @@ $ pip install py-algorithms
       
 ---
 
-    ^ String algorithms 
-      - Patttern Matching
-      - Boyer–Moore string search 
-      - Knut-Morris-Prat string search 
-      
----
-    
-    ^ Graph algorithms
+### Graph Algorithms
       - Depth-First-Search (DFS)
       - Breadth-First-Search (BFS) 
       - Topologial sort
@@ -67,13 +60,20 @@ $ pip install py-algorithms
       
 ---
 
-    ^ Primality Tests
+### String Algorithms 
+      - Patttern Matching
+      - Boyer–Moore string search 
+      - Knut-Morris-Prat string search 
+      
+---    
+
+### Primality Tests
       - Miller-Rabin primality test
       - Simple primality test
       
 ---
     
-    ^ Algorithms
+### Algorithms
       - Quick Union
       - Union Find
       - Weighted Union Find
@@ -81,7 +81,7 @@ $ pip install py-algorithms
       
 ---
 
-    ^ Challenges
+### Challenges
       - TopCoder (www.topcoder.com)
       - HackerRank problems & submissions (https://www.hackerrank.com)
       - CoderByte challenges (https://coderbyte.com)
