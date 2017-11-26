@@ -1,9 +1,9 @@
-from py_algorithms.graph import new_graph
+from py_algorithms.graph import new_undirected_graph
 
 
 class TestGraphApi:
     def test_graph_constructor(self):
-        g = new_graph()
+        g = new_undirected_graph()
         v1 = g.insert_vertex("A")
         v2 = g.insert_vertex("B")
         v3 = g.insert_vertex("C")

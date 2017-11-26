@@ -1,9 +1,9 @@
-from py_algorithms.graph import new_graph, topological_sort_f1
+from py_algorithms.graph import new_directed_graph, topological_sort_f1
 
 
 class TestTopologicalSort:
     def test_topological_sort(self):
-        dag = new_graph(directed=True)
+        dag = new_directed_graph()
         a = dag.insert_vertex('A')
         b = dag.insert_vertex('B')
         c = dag.insert_vertex('C')
