@@ -26,3 +26,15 @@ class CountTransformations:
                     else:
                         dp[i][j] = dp[i][j - 1]
         return dp[m - 1][n - 1]
+
+
+class TestCountTransformations:
+    def test_algorithm(self):
+        f = CountTransformations()
+        assert f(a="abcccdf", b="abccdf") == 3
+        assert f(a="aabba", b="ab") == 4
+
+
+if __name__ == '__main__':
+    runner = TestCountTransformations()
+    runner.test_algorithm()
