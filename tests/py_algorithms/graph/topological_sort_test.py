@@ -3,16 +3,20 @@ from py_algorithms.graph import new_graph, topological_sort_f1
 
 class TestTopologicalSort:
     def test_topological_sort(self):
-        g = new_graph(directed=True)
-        j = g.insert_vertex('J')
-        k = g.insert_vertex('K')
-        c = g.insert_vertex('C')
-        p = g.insert_vertex('P')
-        s = g.insert_vertex('S')
-        g.insert_edge(j, s, None)
-        g.insert_edge(k, p, None)
-        g.insert_edge(c, p, None)
-        g.insert_edge(p, s, None)
+        dag = new_graph(directed=True)
+        a = dag.insert_vertex('A')
+        b = dag.insert_vertex('B')
+        c = dag.insert_vertex('C')
+        d = dag.insert_vertex('D')
+        e = dag.insert_vertex('E')
 
-        t_sorted = topological_sort_f1(g)
-        assert t_sorted == [c, k, p, j, s]
+        dag.insert_edge(a, e, None)
+        dag.insert_edge(b, d, None)
+        dag.insert_edge(c, d, None)
+        dag.insert_edge(d, e, None)
+
+        topological_sort_f1(dag)
+
+        t_sorted = topological_sort_f1(dag)
+        print(t_sorted)
+        assert t_sorted == [c, b, d, a, e]
