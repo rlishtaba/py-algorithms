@@ -36,11 +36,17 @@ setup(
               'hackerrank challenges', 'boyer-moore',
               'boyer-moore-string-search', 'primality-tes',
               'miller-rabin', 'miller-rabin-primality-test',
-              'simple-primality-test'],
-    description="Library of Algorithms, Data Structures, variety of solutions to common "
+              'simple-primality-test', 'topological-sort', 'directed-graph',
+              'DAG', 'directed-acyclic-graph', 'simple-graph',
+              'undirected-graph', 'depth-first-search', 'DFS',
+              'breadth-first-search', 'BFS'],
+    description="Library of Algorithms, Data Structures, "
+                "variety of solutions to common "
                 "CS problems.",
-    long_description="Library of Algorithms, Data Structures, variety of solutions to common "
-                     "CS problems. Algorithms and Data Structures implemented using pure awesome "
+    long_description="Library of Algorithms, Data Structures, "
+                     "variety of solutions to common "
+                     "CS problems. Algorithms and Data Structures "
+                     "implemented using pure awesome "
                      "Python.",
     license="MIT",
     url='https://github.com/rlishtaba/py-algorithms',

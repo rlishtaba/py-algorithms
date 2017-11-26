@@ -10,7 +10,7 @@ Library of Algorithms, Data Structures, variety of solutions to common CS proble
 
 Add this line to your application as managed dependency:
 
-```python
+```bash
 py-algorithms>=0,<1
 ```
 
@@ -22,7 +22,7 @@ $ pip install py-algorithms
 
 ## What's inside?
 
-    ^ Data Structures
+### Data Structures
       - Deque
       - Stack (LIFO)
       - Queue (FIFO)
@@ -33,13 +33,15 @@ $ pip install py-algorithms
         - Min PQ
         - Max PQ
       - Suffix Array
+      
 ---
 
-    ^ Search
+### Search
       - Binary Search
+      
 ---
 
-    ^ Sort
+### Sort
       - Quick Sort
       - Shell Sort (Shell method)
       - Heap Sort (Fibonacci heap)
@@ -47,30 +49,43 @@ $ pip install py-algorithms
       - Comb Sort
       - Bubble Sort
       - Selection Sort
+      
 ---
 
-    ^ String algorithms 
+### Graph Algorithms
+      - Depth-First-Search (DFS)
+      - Breadth-First-Search (BFS) 
+      - Topologial sort
+      - Floyd–Warshall algorithm
+      
+---
+
+### String Algorithms 
       - Patttern Matching
       - Boyer–Moore string search 
       - Knut-Morris-Prat string search 
----
+      
+---    
 
-    ^ Primality Tests
+### Primality Tests
       - Miller-Rabin primality test
       - Simple primality test
+      
 ---
-
-    ^ Algorithms
+    
+### Algorithms
       - Quick Union
       - Union Find
       - Weighted Union Find
       - Weighted Union Find with Path Compression
+      
 ---
 
-    ^ Challenges
+### Challenges
       - TopCoder (www.topcoder.com)
       - HackerRank problems & submissions (https://www.hackerrank.com)
       - CoderByte challenges (https://coderbyte.com)
+      
 ---
 
 ### Challenges
@@ -472,11 +487,44 @@ ds.is_sub_str('blah') #=> False
 
 ---
 
+### Graph Algorithms
+
+
+#### Topological sort
+
+In the field of computer science, a topological sort or topological ordering of a directed graph is a 
+linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, u comes before v in the ordering.
+For instance, the vertices of the graph may represent tasks to be performed, and the edges may represent 
+constraints that one task must be performed before another; in this application, a topological ordering is just a valid sequence for the tasks. 
+A topological ordering is possible if and only if the graph has no directed cycles, that is, if it is a directed acyclic graph (DAG). 
+Any DAG has at least one topological ordering, and algorithms are known for constructing a topological ordering of any DAG in linear time.
+
+![topo-sort](http://www.stoimen.com/blog/wp-content/uploads/2012/10/2.-Topological-Sort.png)
+
+```python
+
+from py_algorithms.graph import new_directed_graph, topological_sort_f1
+
+
+dag = new_directed_graph()
+a = dag.insert_vertex('A')
+b = dag.insert_vertex('B')
+c = dag.insert_vertex('C')
+d = dag.insert_vertex('D')
+e = dag.insert_vertex('E')
+
+dag.insert_edge(a, e, None)
+dag.insert_edge(b, d, None)
+dag.insert_edge(c, d, None)
+dag.insert_edge(d, e, None)
+
+topological_sort_f1(dag) #=> [#<Vertex(C)>, #<Vertex(B)>, #<Vertex(D)>, #<Vertex(A)>, #<Vertex(E)>]
+
+```
+    
 ---
 
 ### String Algorithms
-
-
 
 ![boyer-moore-media](https://www.researchgate.net/profile/Monther_Aldwairi/publication/237067573/figure/fig1/AS:299315785420823@1448373852591/Figure-1-The-Boyer-Moore-algorithm-illustrated-while-checking-a-signature-in-Snort.png)
 
