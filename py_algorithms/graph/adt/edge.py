@@ -17,7 +17,7 @@ class Edge:
         return self._origin, self._destination
 
     def opposite(self, v) -> Union[None, Vertex]:
-        return self._destination if v in self._origin else self._origin
+        return self._destination if v is self._origin else self._origin
 
     def element(self) -> Any:
         return self._element

@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Iterator
 from typing import List
 from typing import Set
 from typing import Union
@@ -38,7 +38,9 @@ class Graph:
         adj = self._outgoing if outgoing else self._incoming
         return len(adj[v])
 
-    def incident_edges(self, v: Vertex, outgoing: bool = True) -> Edge:
+    def incident_edges(self,
+                       v: Vertex,
+                       outgoing: bool = True) -> Iterator[Edge]:
         adj = self._outgoing if outgoing else self._incoming
         for edge in adj[v].values():
             yield edge
@@ -50,7 +52,8 @@ class Graph:
             self._incoming[v] = {}
         return v
 
-    def insert_edge(self, origin: Vertex, destination: Vertex, element: Any) -> Edge:
+    def insert_edge(self, origin: Vertex, destination: Vertex,
+                    element: Any) -> Edge:
         e = Edge(origin, destination, element)
         self._outgoing[origin][destination] = e
         self._incoming[destination][origin] = e
