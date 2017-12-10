@@ -28,3 +28,9 @@ class Stack(Generic[T]):
 
     def is_empty(self) -> bool:
         return self._deque.is_empty()
+
+    def peek(self):
+        if self.size > 0:
+            return self._deque.back
+        raise IndexError('Cannot perform top, stack size: {}'
+                         .format(self.size))

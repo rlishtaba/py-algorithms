@@ -33,12 +33,12 @@ $ pip install py-algorithms
         - Min PQ
         - Max PQ
       - Suffix Array
-      
+
 ---
 
 ### Search
       - Binary Search
-      
+
 ---
 
 ### Sort
@@ -49,43 +49,51 @@ $ pip install py-algorithms
       - Comb Sort
       - Bubble Sort
       - Selection Sort
-      
+
 ---
 
 ### Graph Algorithms
       - Depth-First-Search (DFS)
-      - Breadth-First-Search (BFS) 
+      - Breadth-First-Search (BFS)
       - Topologial sort
       - Floyd–Warshall algorithm
-      
+
 ---
 
-### String Algorithms 
+### String Algorithms
       - Patttern Matching
-      - Boyer–Moore string search 
-      - Knut-Morris-Prat string search 
-      
----    
+      - Boyer–Moore string search
+      - Knut-Morris-Prat string search
+
+---
 
 ### Primality Tests
       - Miller-Rabin primality test
       - Simple primality test
-      
+
 ---
-    
+
 ### Algorithms
       - Quick Union
       - Union Find
       - Weighted Union Find
       - Weighted Union Find with Path Compression
-      
+
+---
+
+### Dynamic Programing (DP)
+
+      - Longest Increasing Subsequence (LIS)
+      - Levenshtein Distance
+      - 0-1 Knapsack Problem
+
 ---
 
 ### Challenges
       - TopCoder (www.topcoder.com)
       - HackerRank problems & submissions (https://www.hackerrank.com)
       - CoderByte challenges (https://coderbyte.com)
-      
+
 ---
 
 ### Challenges
@@ -492,11 +500,11 @@ ds.is_sub_str('blah') #=> False
 
 #### Topological sort
 
-In the field of computer science, a topological sort or topological ordering of a directed graph is a 
+In the field of computer science, a topological sort or topological ordering of a directed graph is a
 linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, u comes before v in the ordering.
-For instance, the vertices of the graph may represent tasks to be performed, and the edges may represent 
-constraints that one task must be performed before another; in this application, a topological ordering is just a valid sequence for the tasks. 
-A topological ordering is possible if and only if the graph has no directed cycles, that is, if it is a directed acyclic graph (DAG). 
+For instance, the vertices of the graph may represent tasks to be performed, and the edges may represent
+constraints that one task must be performed before another; in this application, a topological ordering is just a valid sequence for the tasks.
+A topological ordering is possible if and only if the graph has no directed cycles, that is, if it is a directed acyclic graph (DAG).
 Any DAG has at least one topological ordering, and algorithms are known for constructing a topological ordering of any DAG in linear time.
 
 ![topo-sort](http://www.stoimen.com/blog/wp-content/uploads/2012/10/2.-Topological-Sort.png)
@@ -521,7 +529,7 @@ dag.insert_edge(d, e, None)
 topological_sort_f1(dag) #=> [#<Vertex(C)>, #<Vertex(B)>, #<Vertex(D)>, #<Vertex(A)>, #<Vertex(E)>]
 
 ```
-    
+
 ---
 
 ### String Algorithms
@@ -530,11 +538,11 @@ topological_sort_f1(dag) #=> [#<Vertex(C)>, #<Vertex(B)>, #<Vertex(D)>, #<Vertex
 
 #### Boyer–Moore string search algorithm
 
-In computer science, the Boyer–Moore string search algorithm is an efficient string searching algorithm that 
+In computer science, the Boyer–Moore string search algorithm is an efficient string searching algorithm that
 is the standard benchmark for practical string search literature. It was developed by Robert S. Boyer and J Strother Moore in 1977.
-The algorithm preprocesses the string being searched for (the pattern), but not the string being searched in (the text). 
-It is thus well-suited for applications in which the pattern is much shorter than the text or where it persists across multiple searches. 
-The Boyer-Moore algorithm uses information gathered during the preprocess step to skip sections of the text, 
+The algorithm preprocesses the string being searched for (the pattern), but not the string being searched in (the text).
+It is thus well-suited for applications in which the pattern is much shorter than the text or where it persists across multiple searches.
+The Boyer-Moore algorithm uses information gathered during the preprocess step to skip sections of the text,
 resulting in a lower constant factor than many other string search algorithms.
 
 ```python
@@ -555,18 +563,18 @@ algorithm('foo' + substr + 'bar', substr) # => 3
 ![primes](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Gaussian_integer_lattice.svg/389px-Gaussian_integer_lattice.svg.png)
 
 A primality test is an algorithm for determining whether an input number is prime.
-Among other fields of mathematics, it is used for cryptography. 
-Unlike integer factorization, primality tests do not generally give prime factors, only stating whether the input number 
-is prime or not. Factorization is thought to be a computationally difficult problem, whereas primality 
-testing is comparatively easy (its running time is polynomial in the size of the input). 
-Some primality tests prove that a number is prime, while others like Miller–Rabin prove that a number is composite. 
+Among other fields of mathematics, it is used for cryptography.
+Unlike integer factorization, primality tests do not generally give prime factors, only stating whether the input number
+is prime or not. Factorization is thought to be a computationally difficult problem, whereas primality
+testing is comparatively easy (its running time is polynomial in the size of the input).
+Some primality tests prove that a number is prime, while others like Miller–Rabin prove that a number is composite.
 Therefore, the latter might be called compositeness tests instead of primality tests.
 
 
 #### Miller-Rabin Primality Test
- 
-The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, 
-similar to the Fermat primality test and the Solovay–Strassen primality test. Its original version, due to Gary L. Miller, is deterministic, 
+
+The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime,
+similar to the Fermat primality test and the Solovay–Strassen primality test. Its original version, due to Gary L. Miller, is deterministic,
 but the correctness relies on the unproven Extended Riemann hypothesis; Michael O. Rabin modified it to obtain an unconditional probabilistic algorithm.
 
 ```python
@@ -575,7 +583,7 @@ from py_algorithms.primality_tests import new_miller_rabin_primality_test
 algorithm = new_miller_rabin_primality_test()
 
 algorithm(199) #=> True, 199 is a prime number
-algorithm(4) #=> False, 4 % 2 == 0, therefore, 4 is not a prime number. 
+algorithm(4) #=> False, 4 % 2 == 0, therefore, 4 is not a prime number.
 
 ```
 
@@ -590,11 +598,39 @@ from py_algorithms.primality_tests import new_simple_primality_test
 algorithm = new_simple_primality_test()
 
 algorithm(32416190071) #=> True, 32416190071 is a prime number
-algorithm(4) #=> False, 4 % 2 == 0, therefore, 4 is not a prime number. 
+algorithm(4) #=> False, 4 % 2 == 0, therefore, 4 is not a prime number.
 
 ```
 
 ---
+
+### Dynamic Programing (DP)
+In computer science, mathematics, management science, economics and bioinformatics,
+dynamic programming (also known as dynamic optimization) is a method for solving a complex problem
+by breaking it down into a collection of simpler subproblems, solving each of those subproblems
+just once, and storing their solutions. The next time the same subproblem occurs,
+instead of recomputing its solution, one simply looks up the previously computed solution,
+thereby saving computation time at the expense of a (hopefully) modest expenditure in storage space.
+(Each of the subproblem solutions is indexed in some way, typically based on the values of its input parameters,
+so as to facilitate its lookup.) The technique of storing solutions to subproblems instead of recomputing them is called "memoization".
+
+
+###
+In information theory, Linguistics and computer science, the Levenshtein distance is a string metric for measuring the difference between two sequences.
+Informally, the Levenshtein distance between two words is the minimum number of single-character edits (insertions, deletions or substitutions) required to change one word into the other.
+It is named after Vladimir Levenshtein, who considered this distance in 1965.
+Levenshtein distance may also be referred to as edit distance, although that term may also denote a larger family of distance metrics.
+
+It is closely related to pairwise string alignments.
+
+```python
+from py_algorithms.strings import new_levenshtein_distance
+
+distance = new_levenshtein_distance(list('Moon'), list("Moore"))
+assert 2 == distance
+```
+
+---------
 
 
 ## Contributing
