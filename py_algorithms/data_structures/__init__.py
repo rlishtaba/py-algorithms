@@ -1,20 +1,3 @@
-from typing import Any
-from typing import Callable
-from typing import List
-from typing import TypeVar
-
-from .deque import Deque
-from .doubly_linked_list_deque import DoublyLinkedListDeque
-from .heap import Heap
-from .max_heap import MaxHeap
-from .min_heap import MinHeap
-from .priority_queue import PriorityQueue
-from .queue import Queue
-from .stack import Stack
-from .suffix_array import SuffixArray
-
-T = TypeVar('T')
-
 __all__ = [
     'new_deque',
     'Deque',
@@ -29,7 +12,27 @@ __all__ = [
     'new_priority_queue',
     'PriorityQueue',
     'new_suffix_array',
+    'new_tree_node',
+    'TreeNode',
 ]
+
+from typing import Any
+from typing import Callable
+from typing import List
+from typing import TypeVar
+
+from .deque import Deque
+from .doubly_linked_list_deque import DoublyLinkedListDeque
+from .heap import Heap
+from .max_heap import MaxHeap
+from .min_heap import MinHeap
+from .priority_queue import PriorityQueue
+from .queue import Queue
+from .stack import Stack
+from .suffix_array import SuffixArray
+from .tree_node import TreeNode
+
+T = TypeVar('T')
 
 
 def new_deque(collection: List[Any] = ()) -> Deque:
@@ -134,3 +137,7 @@ def new_suffix_array(string: str) -> SuffixArray:
     :return: SuffixArray interface
     """
     return SuffixArray(string)
+
+
+def new_tree_node(element, left=None, right=None):
+    return TreeNode(element=element, left=left, right=right)
