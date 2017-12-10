@@ -40,7 +40,7 @@ setup(
               'DAG', 'directed-acyclic-graph', 'simple-graph',
               'undirected-graph', 'depth-first-search', 'DFS',
               'breadth-first-search', 'BFS', 'Levenshtein Distance',
-              'levenshtein-distance'],
+              'levenshtein-distance', 'floyd–warshall', 'Floyd', 'Warshall'],
     description="Library of Algorithms, Data Structures, "
                 "variety of solutions to common "
                 "CS problems.",
