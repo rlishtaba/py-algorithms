@@ -39,7 +39,8 @@ setup(
               'simple-primality-test', 'topological-sort', 'directed-graph',
               'DAG', 'directed-acyclic-graph', 'simple-graph',
               'undirected-graph', 'depth-first-search', 'DFS',
-              'breadth-first-search', 'BFS'],
+              'breadth-first-search', 'BFS', 'Levenshtein Distance',
+              'levenshtein-distance'],
     description="Library of Algorithms, Data Structures, "
                 "variety of solutions to common "
                 "CS problems.",
