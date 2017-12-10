@@ -57,6 +57,7 @@ $ pip install py-algorithms
       - Breadth-First-Search (BFS)
       - Topologial sort
       - Floyd–Warshall algorithm
+      - Dijkstra's algorithm
 
 ---
 
@@ -527,6 +528,55 @@ dag.insert_edge(c, d, None)
 dag.insert_edge(d, e, None)
 
 topological_sort_f1(dag) #=> [#<Vertex(C)>, #<Vertex(B)>, #<Vertex(D)>, #<Vertex(A)>, #<Vertex(E)>]
+
+```
+
+### Dijkstra's algorithm
+
+![](https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif)
+
+```python
+from py_algorithms.graph import new_undirected_graph
+from py_algorithms.graph new_dijkstra_shortest_path
+from py_algorithms.graph reconstruct_dijkstra_path_tree
+
+graph = new_undirected_graph()
+a = graph.insert_vertex('A')
+b = graph.insert_vertex('B')
+c = graph.insert_vertex('C')
+d = graph.insert_vertex('D')
+e = graph.insert_vertex('E')
+
+graph.insert_edge(a, e, 10)
+graph.insert_edge(b, d, 2)
+graph.insert_edge(c, d, 3)
+graph.insert_edge(d, e, 12)
+
+# Start from vertex "c" and grow the cluster.
+paths = new_dijkstra_shortest_path(graph, c)
+
+assert paths[c] == 0
+assert paths[d] == 3
+assert paths[b] == 5
+assert paths[e] == 15
+assert paths[a] == 25
+
+# Reconstructing all the paths dicovered by algorithm
+path_tree = reconstruct_dijkstra_path_tree(graph, c, paths)
+
+
+# Expanding path from vertex "a" to vertex "c" from "path_tree"
+p = a
+stack = [a]
+while p != c:
+    p = path_tree[p].opposite(p)
+    stack.append(p)
+
+assert stack == [a, e, d, c]
+
+
+# The shortest path to reach vertex "a":
+assert stack == [a, e, d, c]
 
 ```
 
