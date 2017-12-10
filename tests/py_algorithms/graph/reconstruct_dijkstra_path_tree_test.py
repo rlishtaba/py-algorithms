@@ -28,10 +28,9 @@ class TestReconstructDijkstraPathTree:
         path_tree = reconstruct_dijkstra_path_tree(graph, c, paths)
 
         p = a
-        stack = []
+        stack = [a]
         while p != c:
-            stack.append(p)
             p = path_tree[p].opposite(p)
-        stack.append(p)
+            stack.append(p)
 
         assert stack == [a, e, d, c]

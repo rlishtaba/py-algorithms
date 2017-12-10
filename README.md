@@ -561,15 +561,18 @@ assert paths[b] == 5
 assert paths[e] == 15
 assert paths[a] == 25
 
-# Reconstructing particulat shortest path
+# Reconstructing all the paths dicovered by algorithm
 path_tree = reconstruct_dijkstra_path_tree(graph, c, paths)
 
-root = a
-stack = []
-while root != c:
-    stack.append(root)
-    root = path_tree[root].opposite(root)
-stack.append(root)
+
+# Expanding path from vertex "a" to vertex "c" from "path_tree"
+p = a
+stack = [a]
+while p != c:
+    p = path_tree[p].opposite(p)
+    stack.append(p)
+
+assert stack == [a, e, d, c]
 
 
 # The shortest path to reach vertex "a":
