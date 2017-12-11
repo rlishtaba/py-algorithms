@@ -80,6 +80,8 @@ $ pip install py-algorithms
       - Weighted Union Find
       - Weighted Union Find with Path Compression
 
+      - Longest Consecutive
+
 ---
 
 ### Dynamic Programing (DP)
