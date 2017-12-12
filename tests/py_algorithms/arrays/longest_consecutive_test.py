@@ -3,7 +3,7 @@ import pytest
 from py_algorithms.array.longest_consecutive import LongestConsecutive
 
 
-def test_case_helper(f, mapping):
+def _test_case_helper(f, mapping):
     for x in mapping:
         payload, expected = x
         assert expected == f(payload)
@@ -19,10 +19,10 @@ def cases():
 
 class TestLongestConsecutive:
     def test_apply(self):
-        test_case_helper(LongestConsecutive.with_sorting, cases())
+        _test_case_helper(LongestConsecutive.with_sorting, cases())
 
     def test_brute_force(self):
-        test_case_helper(LongestConsecutive.brute_force, cases())
+        _test_case_helper(LongestConsecutive.brute_force, cases())
 
     def test_with_set(self):
-        test_case_helper(LongestConsecutive.with_set, cases())
+        _test_case_helper(LongestConsecutive.with_set, cases())
