@@ -57,7 +57,6 @@ setup(
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
     ],
     install_requires=[
         'packaging>=16',
